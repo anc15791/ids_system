@@ -101,6 +101,6 @@ echo " * Copy logstash conf files to /etc/logstash/conf.d/"
 sudo cp -a $SRC_DIR/../logstash/.  /etc/logstash/conf.d/
 
 cd $SRC_DIR #$HOME/tools/bro
-sudo cp ../logstash.service /etc/systemd/system
+sudo cp ../logstash/logstash.service /etc/systemd/system
 sudo cp ../bro.service /etc/systemd/system
 echo " * Bro installaton complete"
