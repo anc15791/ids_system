@@ -1,0 +1,9 @@
+#!/bin/bash -e
+VER=$1
+
+cd bro
+git pull
+git checkout master
+./configure --with-pcap=/opt/pfring
+make
+make install
