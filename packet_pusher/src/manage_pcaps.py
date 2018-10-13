@@ -58,7 +58,7 @@ def downloadFiles(pcap_path):
         base_url = "https://archive.wrccdc.org/pcaps/2018/"
         urlib_opener = urllib.URLopener()
         urlib_opener.retrieve(base_url+pcap_path, pcap_path)
-        rename(pcap_path, pcap_dir+pcap_path)
+        rename(pcap_path, pcap_dir+pcap_path[4:-6]+".pcap")
 
     except Exception as e:
         print(e)
