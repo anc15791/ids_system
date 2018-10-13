@@ -32,7 +32,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/conn.log
-    tags: ["bro_conn"]
+  tags: ["bro_conn"]
   fields:
     type: "bro-conn"
 
@@ -41,7 +41,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/ssl.log
-    tags: ["bro_ssl"]
+  tags: ["bro_ssl"]
   fields:
     type: "bro-ssl"
 
@@ -50,7 +50,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/dhcp.log
-    tags: ["bro_dhcp"]
+  tags: ["bro_dhcp"]
   fields:
     type: "bro-dhcp"
   fields_under_root: true
@@ -59,7 +59,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/dns.log
-    tags: ["bro_dns"]
+  tags: ["bro_dns"]
   fields:
     type: "bro-dns"
   fields_under_root: true
@@ -68,7 +68,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/ftp.log
-    tags: ["bro_ftp"]
+  tags: ["bro_ftp"]
   fields:
     type: "bro-ftp"
   fields_under_root: true
@@ -77,7 +77,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/http.log
-    tags: ["bro_http"]
+  tags: ["bro_http"]
   fields:
     type: "bro-http"
   fields_under_root: true
@@ -86,7 +86,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/smtp.log
-    tags: ["bro_smtp"]
+  tags: ["bro_smtp"]
   fields:
     type: "bro-smtp"
   fields_under_root: true
@@ -95,7 +95,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/snmp.log
-    tags: ["bro_snmp"]
+  tags: ["bro_snmp"]
   fields:
     type: "bro-snmp"
   fields_under_root: true
@@ -104,7 +104,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/files.log
-    tags: ["bro_files"]
+  tags: ["bro_files"]
   fields:
     type: "bro-files"
   fields_under_root: true
@@ -113,7 +113,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/x509.log
-    tags: ["bro_x509"]
+  tags: ["bro_x509"]
   fields:
     type: "bro-x509"
   fields_under_root: true
@@ -122,7 +122,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/intel.log
-    tags: ["bro_intel"]
+  tags: ["bro_intel"]
   fields:
     type: "bro-intel"
   fields_under_root: true
@@ -131,7 +131,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/software.log
-    tags: ["bro_software"]
+  tags: ["bro_software"]
   fields:
     type: "bro-software"
   fields_under_root: true
@@ -140,7 +140,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/weird.log
-    tags: ["bro_weird"]
+  tags: ["bro_weird"]
   fields:
     type: "bro-weird"
   fields_under_root: true
@@ -149,7 +149,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/capture_loss.log
-    tags: ["bro_capture_loss"]
+  tags: ["bro_capture_loss"]
   fields:
     type: "bro-capture_loss"
   fields_under_root: true
@@ -158,7 +158,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - /usr/local/bro/logs/current/stats.log
-    tags: ["bro_stats"]
+  tags: ["bro_stats"]
   fields:
     type: "bro-stats"
   fields_under_root: true
