@@ -37,3 +37,13 @@
   * docker inspect <Commit hash> : View commit of using its hash
 * docker start f357e2faab77 # restart it in the background
 * docker attach f357e2faab77 # reattach the terminal & stdin
+
+
+docker run --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+
+docker run --name kibana -p 5601:5601 -e "ELASTICSEARCH_URL=http://172.17.0.2:9200" docker.elastic.co/kibana/kibana:6.4.2
+
+docker run -u 0 --name logstash -P -it --network host  docker.elastic.co/logstash/logstash:6.4.2 /bin/bash
+
+
+logstash-plugin install logstash-output-kafka
