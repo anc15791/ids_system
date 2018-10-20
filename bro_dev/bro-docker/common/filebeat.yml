@@ -130,15 +130,6 @@ filebeat.inputs:
 - type: log
   enabled: true
   paths:
-    - /usr/local/bro/logs/current/software.log
-  tags: ["bro_software"]
-  fields:
-    type: "bro-software"
-  fields_under_root: true
-
-- type: log
-  enabled: true
-  paths:
     - /usr/local/bro/logs/current/weird.log
   tags: ["bro_weird"]
   fields:
