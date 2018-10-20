@@ -47,3 +47,34 @@ docker run -u 0 --name logstash -P -it --network host  docker.elastic.co/logstas
 
 
 logstash-plugin install logstash-output-kafka
+
+scp -r "/Users/sparta/Desktop/ids_system" sdn-nfv@130.65.157.239:/home/sdn-nfv/Desktop/
+
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
+
+
+https://gist.github.com/Dev-Dipesh/2ac30a8a01afb7f65b2192928a875aa1
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-prod-cluster-composefile
+
+PUT /twitter/_settings
+{
+    "index" : {
+        "number_of_replicas" : 2
+    }
+}
+
+PUT /twitter/_settings
+{
+    "index" : {
+        "refresh_interval" : "1s"
+    }
+}
+
+
+
+kafka-topics --create --topic bro_conn --partitions 3 --replication-factor 3 --if-not-exists --zookeeper localhost:22181
+
+kafka-topics --describe --topic bro_conn --zookeeper localhost:22181
+
+kafka-console-consumer --bootstrap-server localhost:19092 --topic bro_conn --from-beginning --max-messages 3
