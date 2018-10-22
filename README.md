@@ -73,8 +73,34 @@ PUT /twitter/_settings
 
 
 
-kafka-topics --create --topic bro_conn --partitions 3 --replication-factor 3 --if-not-exists --zookeeper localhost:22181
+docker exec -u 0 kafka_kafka-1_1 kafka-topics --create --topic bro_conn --partitions 3 --replication-factor 3 --if-not-exists --zookeeper localhost:22181
 
-kafka-topics --describe --topic bro_conn --zookeeper localhost:22181
+docker exec -u 0 kafka_kafka-1_1 kafka-topics --describe --topic bro_conn --zookeeper localhost:22181
 
-kafka-console-consumer --bootstrap-server localhost:19092 --topic bro_conn --from-beginning --max-messages 3
+docker exec -u 0 kafka_kafka-1_1 kafka-console-consumer --bootstrap-server localhost:19092 --topic bro_conn --from-beginning --max-messages 3
+
+
+sudo rm -rf kafka-1/data/* & sudo rm -rf kafka-2/data/* & sudo rm -rf kafka-3/data/*
+
+sudo rm -rf zookeeper-1/data/* & sudo rm -rf zookeeper-1/log/* & sudo rm -rf zookeeper-2/data/* & sudo rm -rf zookeeper-2/log/* & sudo rm -rf zookeeper-3/data/* & sudo rm -rf zookeeper-3/log/*
+
+
+
+
+
+
+-----------------------------------------------
+KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+KAFKA_DEFAULT_REPLICATION_STATUS: 3
+SERVER_DEFAULT_REPLICATION_STATUS: 3
+DEFAULT_REPLICATION_FACTOR: 3
+KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
+SERVER_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
+
+volumes:
+  - ./persistent_mount/zookeeper-1/data:/var/lib/zookeeper/data
+  - ./persistent_mount/zookeeper-1/log:/var/lib/zookeeper/log
+
+  volumes:
+    - ./persistent_mount/kafka-1/data:/var/lib/kafka/data
+-----------------------------------------------
