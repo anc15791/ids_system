@@ -7,14 +7,56 @@ services:
       context: elasticsearch/
       args:
         ELK_VERSION: $ELK_VERSION
+    container_name: elasticsearch
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      - ./elasticsearch/data:/usr/share/elasticsearch/data
     ports:
       - "9200:9200"
       - "9300:9300"
     environment:
-      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      - cluster.name=docker-cluster
+      - discovery.zen.minimum_master_nodes=2
+      - "ES_JAVA_OPTS: -Xmx2g -Xms2g"
+      - "discovery.zen.ping.unicast.hosts=130.65.157.239:9300,130.65.157.239:9302"
     network_mode: host
+
+  elasticsearch1:
+    build:
+      context: elasticsearch/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    container_name: elasticsearch1
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      - ./elasticsearch/data1:/usr/share/elasticsearch/data
+    environment:
+      - cluster.name=docker-cluster
+      - discovery.zen.minimum_master_nodes=2
+      - "discovery.zen.ping.unicast.hosts=130.65.157.239:9300,130.65.157.239:9302"
+      - "ES_JAVA_OPTS: -Xmx2g -Xms2g"
+    network_mode: host
+    depends_on:
+      - elasticsearch
+
+  elasticsearch2:
+    build:
+      context: elasticsearch/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    container_name: elasticsearch2
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      - ./elasticsearch/data2:/usr/share/elasticsearch/data
+    environment:
+      - cluster.name=docker-cluster
+      - discovery.zen.minimum_master_nodes=2
+      - "discovery.zen.ping.unicast.hosts=130.65.157.239:9300,130.65.157.239:9302"
+      - "ES_JAVA_OPTS: -Xmx2g -Xms2g"
+    network_mode: host
+    depends_on:
+      - elasticsearch
+
 
   logstash:
     build:
