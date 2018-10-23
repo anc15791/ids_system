@@ -9,8 +9,6 @@
 
 ## Navigation
 
-* __bro_dev__: It has all  
-
 
 ## Useful Docker Commands
 
@@ -38,57 +36,63 @@
 * docker start f357e2faab77 # restart it in the background
 * docker attach f357e2faab77 # reattach the terminal & stdin
 
+## How to run
 
-docker run --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+* ssh sdn-nfv@130.65.157.239
+* Repo is in: Desktop/ids_system
+* __Kafka__: Navigate to kafka directory. Start Kafka first
+  * docker-compose up : wait till it starts
+  * Create new topics. Replace bro_conn with any topic name. Everything else is same. This assumes all 3 kafka nodes are up. Else it gives error. :
+    * " docker exec -u 0 kafka_kafka-1_1 kafka-topics --create --topic bro_conn --partitions 3 --replication-factor 3 --if-not-exists --zookeeper localhost:22181 "
+  * Check if topic was created. Here topic name is bro_conn:
+    * docker exec -u 0 kafka_kafka-1_1 kafka-topics --describe --topic bro_conn --zookeeper localhost:22181
+  * To check if topic is receiving data:
+    * docker exec -u 0 kafka_kafka-1_1 kafka-console-consumer --bootstrap-server localhost:19092 --topic bro_conn --from-beginning --max-messages 3
+  * docker-compose down: : To shutdown the cluster and remove the containers.
 
-docker run --name kibana -p 5601:5601 -e "ELASTICSEARCH_URL=http://172.17.0.2:9200" docker.elastic.co/kibana/kibana:6.4.2
-
-docker run -u 0 --name logstash -P -it --network host  docker.elastic.co/logstash/logstash:6.4.2 /bin/bash
-
-
-logstash-plugin install logstash-output-kafka
-
-scp -r "/Users/sparta/Desktop/ids_system" sdn-nfv@130.65.157.239:/home/sdn-nfv/Desktop/
-
-docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
-
-
-https://gist.github.com/Dev-Dipesh/2ac30a8a01afb7f65b2192928a875aa1
-
-https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-prod-cluster-composefile
-
-PUT /twitter/_settings
-{
-    "index" : {
-        "number_of_replicas" : 2
-    }
-}
-
-PUT /twitter/_settings
-{
-    "index" : {
-        "refresh_interval" : "1s"
-    }
-}
+* __ELK cluster__: Navigate to elk directory. Run this after kafka
+  * docker-compose up : wait till it starts.
+  * To access Kibana dashboard, from any browser go to: http://http://130.65.157.239/
+  * docker-compose down: : To shutdown the cluster and remove the containers.
+* __Bro & Filebeat__: This container is already running. DO NOT STOP IT. Bro and Filebeat are working and doing their job.
+  * To open a shell to this container:
+    * docker exec -it -u 0 bro /bin/bash
+    * restart Bro:
+      * broctl install
+      * broctl deploy
+    * start stop filebeat:
+      * service filebeat stop
+      * service filebeat start
+* __Replay traffic__: I have already downloaded few pcaps. Replay using following commands. This will replay traffic on port where bro is logging.
+  * Navigate to: /Desktop/ids_system/packet_pusher/pcaps/
+  * execute: sudo tcpreplay --intf1=eno1 *
 
 
+## Some other commands
 
-docker exec -u 0 kafka_kafka-1_1 kafka-topics --create --topic bro_conn --partitions 3 --replication-factor 3 --if-not-exists --zookeeper localhost:22181
+* scp -r "/Users/sparta/Desktop/ids_system" sdn-nfv@130.65.157.239:/home/sdn-nfv/Desktop/
 
-docker exec -u 0 kafka_kafka-1_1 kafka-topics --describe --topic bro_conn --zookeeper localhost:22181
+* docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
 
-docker exec -u 0 kafka_kafka-1_1 kafka-console-consumer --bootstrap-server localhost:19092 --topic bro_conn --from-beginning --max-messages 3
+* sudo rm -rf kafka-1/data/* & sudo rm -rf kafka-2/data/* & sudo rm -rf kafka-3/data/*
+
+* sudo rm -rf zookeeper-1/data/* & sudo rm -rf zookeeper-1/log/* & sudo rm -rf zookeeper-2/data/* & sudo rm -rf zookeeper-2/log/* & sudo rm -rf zookeeper-3/data/* & sudo rm -rf zookeeper-3/log/*
+
+* docker run --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+
+* docker run --name kibana -p 5601:5601 -e "ELASTICSEARCH_URL=http://172.17.0.2:9200" docker.elastic.co/kibana/kibana:6.4.2
+
+* docker run -u 0 --name logstash -P -it --network host  docker.elastic.co/logstash/logstash:6.4.2 /bin/bash
 
 
-sudo rm -rf kafka-1/data/* & sudo rm -rf kafka-2/data/* & sudo rm -rf kafka-3/data/*
+## Some links
 
-sudo rm -rf zookeeper-1/data/* & sudo rm -rf zookeeper-1/log/* & sudo rm -rf zookeeper-2/data/* & sudo rm -rf zookeeper-2/log/* & sudo rm -rf zookeeper-3/data/* & sudo rm -rf zookeeper-3/log/*
+* https://gist.github.com/Dev-Dipesh/2ac30a8a01afb7f65b2192928a875aa1
 
-
-
-
+* https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-prod-cluster-composefile
 
 
+## Misc
 -----------------------------------------------
 KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
 KAFKA_DEFAULT_REPLICATION_STATUS: 3
@@ -104,3 +108,4 @@ volumes:
   volumes:
     - ./persistent_mount/kafka-1/data:/var/lib/kafka/data
 -----------------------------------------------
+logstash-plugin install logstash-output-kafka
