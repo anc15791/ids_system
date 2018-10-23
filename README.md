@@ -1,8 +1,7 @@
 # Smart Intrusion detection system
 
 ## How to collaborate
-* Clone the repo
-* Create a new branch under your name
+* Fork the repo
 * Make your changes.
 * Push into your branch.
 * Make a pull request to merge it in master
