@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+
+  bro:
+    build:
+      context: bro-docker/
+    container_name: bro
+    volumes:
+      - ./etc/broctl.cfg:/usr/local/bro/etc/broctl.cfg
+      - ./etc/node.cfg:/usr/local/bro/etc/node.cfg
+      - ./etc/networks.cfg:/usr/local/bro/etc/networks.cfg
+      - ./etc/filebeat.yml:/etc/filebeat.yml
+      - ./site/local.bro:/usr/local/bro/share/bro/site/local.bro
+    ports:
+      - "5044:5044"
+    network_mode: host
