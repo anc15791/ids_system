@@ -18,7 +18,7 @@
 * docker pull anurag1591/bro_ids
 * docker rm $(docker ps -aq) : remove all containers
 * docker stop $(docker ps -aq) : stop all containers
-* docker rmi $(docker images -q) : remove all images
+  * docker rmi $(docker images -q) : remove all images
 * docker ps -aq : List all containers
 * docker ps --filter "status=exited" : Show only stopped containers
 * Push images to docker cloud
@@ -40,9 +40,11 @@
 * ssh sdn-nfv@130.65.157.239
 * Repo is in: Desktop/ids_system
 * __Kafka__: Navigate to kafka directory. Start Kafka first
-  * docker-compose up : wait till it starts
+  * docker-compose up -d: wait till it starts
+  * to view logs: docker-compose logs -f -t
   * Create new topics. Replace bro_conn with any topic name. Everything else is same. This assumes all 3 kafka nodes are up. Else it gives error. :
     * " docker exec -u 0 kafka_kafka-1_1 kafka-topics --create --topic bro_conn --partitions 3 --replication-factor 3 --if-not-exists --zookeeper localhost:22181 "
+      * Create topics for: bro_conn, bro_ssl, bro_http, bro_intel, bro_x509
   * Check if topic was created. Here topic name is bro_conn:
     * docker exec -u 0 kafka_kafka-1_1 kafka-topics --describe --topic bro_conn --zookeeper localhost:22181
   * To check if topic is receiving data:
@@ -50,38 +52,46 @@
   * docker-compose down: : To shutdown the cluster and remove the containers.
 
 * __ELK cluster__: Navigate to elk directory. Run this after kafka
-  * docker-compose up : wait till it starts.
+  * docker-compose up -d: wait till it starts
+  * to view logs: docker-compose logs -f -t
   * To access Kibana dashboard, from any browser go to: http://http://130.65.157.239/
   * docker-compose down: : To shutdown the cluster and remove the containers.
-* __Bro & Filebeat__: This container is already running. DO NOT STOP IT. Bro and Filebeat are working and doing their job.
+* __Bro & Filebeat__: Navigate to bro_dev directory.
+  * docker-compose up -d: wait till it starts
+  * to view logs: docker-compose logs -f -t
   * To open a shell to this container:
     * docker exec -it -u 0 bro /bin/bash
-    * restart Bro:
-      * broctl install
-      * broctl deploy
-    * start stop filebeat:
-      * service filebeat stop
-      * service filebeat start
+  * Get bro status: docker exec -u 0 bro broctl status
+  * restart Bro:
+    * docker exec -u 0 bro broctl install
+    * docker exec -u 0 bro broctl deploy
+  * start stop filebeat:
+    * docker exec -u 0 bro service filebeat stop
+    * docker exec -u 0 bro service filebeat start
+  * docker-compose down: : To shutdown the cluster and remove the containers.
 * __Replay traffic__: I have already downloaded few pcaps. Replay using following commands. This will replay traffic on port where bro is logging.
   * Navigate to: /Desktop/ids_system/packet_pusher/pcaps/
-  * execute: sudo tcpreplay --intf1=eno1 *
+  * execute: sudo tcpreplay <--mbps=200 || --pps=10000> <--loop=100> --intf1=enp5s0f1 *
+* __NGINX__ : This is required to access Kibana and Jupiterlab via browser
+  * To access Kibana: http://130.65.157.239/kibana
+  * To access Jupiterlab: http://130.65.157.239/jupiterlab
+    * If prompted for a password, use jupiterlab
+    * If prompter to use a differnt workspace, type your name and return.
+  * Refer ML/Jupiterlab for installation details
+  * Refer nginx/sites-available/default for proxy details
 
 
 ## Some other commands
 
 * scp -r "/Users/sparta/Desktop/ids_system" sdn-nfv@130.65.157.239:/home/sdn-nfv/Desktop/
-
 * docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
-
 * sudo rm -rf kafka-1/data/* & sudo rm -rf kafka-2/data/* & sudo rm -rf kafka-3/data/*
-
 * sudo rm -rf zookeeper-1/data/* & sudo rm -rf zookeeper-1/log/* & sudo rm -rf zookeeper-2/data/* & sudo rm -rf zookeeper-2/log/* & sudo rm -rf zookeeper-3/data/* & sudo rm -rf zookeeper-3/log/*
-
 * docker run --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.4.2
-
 * docker run --name kibana -p 5601:5601 -e "ELASTICSEARCH_URL=http://172.17.0.2:9200" docker.elastic.co/kibana/kibana:6.4.2
-
 * docker run -u 0 --name logstash -P -it --network host  docker.elastic.co/logstash/logstash:6.4.2 /bin/bash
+* ethtool -i enp5s0f1
+* service nginx start
 
 
 ## Some links
@@ -91,6 +101,14 @@
 * https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-prod-cluster-composefile
 
 
+## PF_RING support:
+
+* Kernel installation:
+  * https://www.ntop.org/pf_ring/installation-guide-for-pf_ring/
+  * https://www.ntop.org/guides/pf_ring/get_started/git_installation.html
+  * https://www.ntop.org/guides/pf_ring/vm_support/docker.html
+* Zero copy: http://www.ntop.org/guides/pf_ring/zc.html
+* With Bro: https://www.ntop.org/guides/pf_ring/thirdparty/bro.html
 ## Misc
 -----------------------------------------------
 KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
