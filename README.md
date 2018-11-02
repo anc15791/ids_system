@@ -8,7 +8,6 @@
 
 ## Navigation
 
-
 ## Useful Docker Commands
 
 * docker images
@@ -79,7 +78,10 @@
     * If prompter to use a differnt workspace, type your name and return.
   * Refer ML/Jupiterlab for installation details
   * Refer nginx/sites-available/default for proxy details
-
+* __Jupiter Hub__: This is helpful for creating model pipeline and collaborative work
+  * conda activate py35: This activates python 3.5 environment necessary for clipper.ai to work properly.
+  * conda deactivate
+  * jupyter lab: [password: jupiterlab]
 
 ## Some other commands
 

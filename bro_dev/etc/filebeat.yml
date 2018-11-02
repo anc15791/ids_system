@@ -153,6 +153,15 @@ filebeat.inputs:
   fields:
     type: "bro-stats"
   fields_under_root: true
+
+- type: log
+  enabled: true
+  paths:
+    - /usr/local/bro/logs/current/notice.log
+  tags: ["bro_notice"]
+  fields::
+    type: "bro-notice"
+  fields_under_root: true
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
   # matching any regular expression from the list.
   #exclude_lines: ['^DBG']
