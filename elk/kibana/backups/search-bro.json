@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "333db770-de76-11e8-9706-f1df48f32d88",
+    "_type": "search",
+    "_source": {
+      "title": "conn search",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "uid",
+        "connection_state_description",
+        "conn_state",
+        "duration",
+        "history",
+        "proto"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"9d662d30-de71-11e8-9706-f1df48f32d88\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  }
+]

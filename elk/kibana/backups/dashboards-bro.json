@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "0e7f5a80-de74-11e8-9706-f1df48f32d88",
+    "_type": "dashboard",
+    "_source": {
+      "title": "bro_conn",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":12,\"h\":12,\"i\":\"1\"},\"id\":\"d726e000-de71-11e8-9706-f1df48f32d88\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":12,\"y\":0,\"w\":12,\"h\":12,\"i\":\"2\"},\"id\":\"fde6c430-de71-11e8-9706-f1df48f32d88\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":0,\"w\":12,\"h\":12,\"i\":\"3\"},\"id\":\"24fdc910-de72-11e8-9706-f1df48f32d88\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":36,\"y\":0,\"w\":12,\"h\":12,\"i\":\"4\"},\"id\":\"3c9a3fe0-de72-11e8-9706-f1df48f32d88\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":12,\"w\":24,\"h\":15,\"i\":\"5\"},\"id\":\"7f369910-de73-11e8-9706-f1df48f32d88\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":12,\"w\":24,\"h\":15,\"i\":\"6\"},\"id\":\"e7a47440-de73-11e8-9706-f1df48f32d88\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":39,\"w\":48,\"h\":15,\"i\":\"7\"},\"id\":\"333db770-de76-11e8-9706-f1df48f32d88\",\"panelIndex\":\"7\",\"type\":\"search\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":27,\"w\":12,\"h\":12,\"i\":\"8\"},\"id\":\"673da300-de76-11e8-9706-f1df48f32d88\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"gridData\":{\"x\":12,\"y\":27,\"w\":12,\"h\":12,\"i\":\"9\"},\"version\":\"6.4.2\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"id\":\"3c428950-de7a-11e8-89c6-3b16db71e628\",\"embeddableConfig\":{}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  }
+]
