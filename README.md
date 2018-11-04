@@ -18,6 +18,10 @@
 * docker rm $(docker ps -aq) : remove all containers
 * docker stop $(docker ps -aq) : stop all containers
   * docker rmi $(docker images -q) : remove all images
+* Remove all stopped/exited containers:
+  * docker rm $(docker ps --filter "status=exited" -aq)
+* Remove images with none
+  * docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}')
 * docker ps -aq : List all containers
 * docker ps --filter "status=exited" : Show only stopped containers
 * Push images to docker cloud
@@ -67,10 +71,14 @@
   * start stop filebeat:
     * docker exec -u 0 bro service filebeat stop
     * docker exec -u 0 bro service filebeat start
+  * Assign filebeat.yml user:group as root and read write permission for all users
+    * sudo chown root:root etc/filebeat.yml
+    * sudo chmod -777 etc/filebeat.yml
   * docker-compose down: : To shutdown the cluster and remove the containers.
 * __Replay traffic__: I have already downloaded few pcaps. Replay using following commands. This will replay traffic on port where bro is logging.
   * Navigate to: /Desktop/ids_system/packet_pusher/pcaps/
-  * execute: sudo tcpreplay <--mbps=200 || --pps=10000> <--loop=100> --intf1=enp5s0f1 *
+  * execute: sudo tcpreplay --mbps=200 --loop=100 --intf1=enp5s0f1 *
+  * sudo tcpreplay --pps=10000 --loop=100 --intf1=enp5s0f1 *
 * __NGINX__ : This is required to access Kibana and Jupiterlab via browser
   * To access Kibana: http://130.65.157.239/kibana
   * To access Jupiterlab: http://130.65.157.239/jupiterlab
