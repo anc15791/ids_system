@@ -37,7 +37,9 @@
   * docker inspect <Commit hash> : View commit of using its hash
 * docker start f357e2faab77 # restart it in the background
 * docker attach f357e2faab77 # reattach the terminal & stdin
-
+* Cleanup operations: These commands will remove all images and associated volumes. Do only if loss of data is okay.
+  * docker volume rm $(docker volume ls -qf dangling=true)
+  * docker system prune -a
 ## How to run
 
 * ssh sdn-nfv@130.65.157.239
@@ -52,13 +54,28 @@
     * docker exec -u 0 kafka_kafka-1_1 kafka-topics --describe --topic bro_conn --zookeeper localhost:22181
   * To check if topic is receiving data:
     * docker exec -u 0 kafka_kafka-1_1 kafka-console-consumer --bootstrap-server localhost:19092 --topic bro_conn --from-beginning --max-messages 3
-  * docker-compose down: : To shutdown the cluster and remove the containers.
+  * To create a consumer group:
+    * docker exec -u 0 kafka_kafka-1_1 kafka-console-consumer --bootstrap-server localhost:19092 --topic bro_conn --from-beginning --consumer-property group.id=bro_conn_log
+  * Get group information:
+    * docker exec -u 0 kafka_kafka-1_1 kafka-consumer-groups --bootstrap-server localhost:19092 --describe --group bro_conn_log
+  * docker-compose down -v : To shutdown the cluster and remove the containers.
+  * Kafka Commands:
+    * docker exec -u 0 kafka_kafka-1_1 kafka-consumer-groups --describe --group bro_conn_log --bootstrap-server localhost:19092
+
 
 * __ELK cluster__: Navigate to elk directory. Run this after kafka
   * docker-compose up -d: wait till it starts
   * to view logs: docker-compose logs -f -t
   * To access Kibana dashboard, from any browser go to: http://http://130.65.157.239/
   * docker-compose down: : To shutdown the cluster and remove the containers.
+  * Install elasticsearch curator for indice deletion.
+    * pip install elasticsearch-curator
+      * Check verison : curator --version , It should be 5.x to support Elasticsearch 6.4
+      * Create curator.yml and action.yml in ~/.curator directory. Check /elk/curator for these files.
+      * curator --dry-run action.yml : This performs a dry run. Use it to see the possible outcome
+      * curator action.yml
+      * Other commands:
+        * curator_cli show_indices
 * __Bro & Filebeat__: Navigate to bro_dev directory.
   * docker-compose up -d: wait till it starts
   * to view logs: docker-compose logs -f -t
@@ -94,6 +111,7 @@
 ## Some other commands
 
 * scp -r "/Users/sparta/Desktop/ids_system" sdn-nfv@130.65.157.239:/home/sdn-nfv/Desktop/
+* scp -r sdn-nfv@130.65.157.239:/home/sdn-nfv/Desktop/clipper_test.ipynb "/Users/sparta/Desktop/ids_system/Clipper/notebooks/" 
 * docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
 * sudo rm -rf kafka-1/data/* & sudo rm -rf kafka-2/data/* & sudo rm -rf kafka-3/data/*
 * sudo rm -rf zookeeper-1/data/* & sudo rm -rf zookeeper-1/log/* & sudo rm -rf zookeeper-2/data/* & sudo rm -rf zookeeper-2/log/* & sudo rm -rf zookeeper-3/data/* & sudo rm -rf zookeeper-3/log/*
@@ -102,6 +120,8 @@
 * docker run -u 0 --name logstash -P -it --network host  docker.elastic.co/logstash/logstash:6.4.2 /bin/bash
 * ethtool -i enp5s0f1
 * service nginx start
+* du -ma /var/lib/docker | sort -n -r | head -n 20
+* kafka version: docker logs kafka_kafka-1_1 | egrep -i "kafka\W+version"
 
 
 ## Some links
