@@ -49,3 +49,4 @@ cred.json
 
 # data files #
 *.pcap
+*.pickle
