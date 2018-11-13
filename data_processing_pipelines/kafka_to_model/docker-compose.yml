@@ -1,0 +1,24 @@
+version: "2"
+services:
+  kafka_to_model:
+    build:
+      context: build/
+    container_name: kafka_to_model
+    volumes:
+      - ./scripts:/usr/local/scripts
+    environment:
+     - DEMO_VAR=${DEMO_VAR}
+     - EXP_NAME=${EXP_NAME}
+     - EXP_NUM=${EXP_NUM}
+     - CONSUMER_BOOTSTRAP_SERVER=${CONSUMER_BOOTSTRAP_SERVER}
+     - PRODUCER_BOOTSTRAP_SERVER=${PRODUCER_BOOTSTRAP_SERVER}
+     - CONSUMER_CLIENT_ID=${CONSUMER_CLIENT_ID}_${EXP_NAME}_${EXP_NUM}
+     - PRODUCER_CLIENT_ID=${PRODUCER_CLIENT_ID}_${EXP_NAME}_${EXP_NUM}
+     - AUTO_COMMIT_INTERVAL_MS=${AUTO_COMMIT_INTERVAL_MS}
+     - CONSUMER_GROUP_ID=${CONSUMER_GROUP_ID}
+     - CONSUMER_TOPIC_NAME=${CONSUMER_TOPIC_NAME}
+     - PRODUCER_TOPIC_NAME=${PRODUCER_TOPIC_NAME}
+     - MESSAGES_TO_READ=${MESSAGES_TO_READ}
+     - MODEL_SERVER=${MODEL_SERVER}
+     - FEATURE_SET=${FEATURE_SET}
+    network_mode: host
