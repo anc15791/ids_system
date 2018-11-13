@@ -5,6 +5,6 @@ echo $DEMO_VAR
 #conda activate
 python -V
 
-python /usr/local/scripts/start_$EXP_NUM.py
+python /usr/local/scripts/start.py
 
 exec $@
