@@ -1,0 +1,7 @@
+FROM continuumio/miniconda3
+
+#RUN apk add --no-cache bash
+
+COPY docker-entrypoint.sh /
+ENTRYPOINT ["/bin/bash"]
+CMD ["/docker-entrypoint.sh"]

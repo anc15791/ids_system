@@ -1,0 +1,63 @@
+version: "2"
+services:
+  test_0:
+    build:
+      context: build/
+    container_name: anurag_0
+    volumes:
+      - ./scripts:/usr/local/scripts
+    environment:
+     - DEMO_VAR=${DEMO_VAR}
+     - EXP_NAME=${EXP_NAME}
+     - EXP_NUM=${EXP_NUM}
+     - CONSUMER_BOOTSTRAP_SERVER=${CONSUMER_BOOTSTRAP_SERVER}
+     - PRODUCER_BOOTSTRAP_SERVER=${PRODUCER_BOOTSTRAP_SERVER}
+     - CONSUMER_CLIENT_ID=${CONSUMER_CLIENT_ID}
+     - PRODUCER_CLIENT_ID=${PRODUCER_CLIENT_ID}
+     - AUTO_COMMIT_INTERVAL_MS=${AUTO_COMMIT_INTERVAL_MS}
+     - CONSUMER_GROUP_ID=${CONSUMER_GROUP_ID}
+     - CONSUMER_TOPIC_NAME=${CONSUMER_TOPIC_NAME}
+     - PRODUCER_TOPIC_NAME=${PRODUCER_TOPIC_NAME}
+    network_mode: host
+
+
+  test_1:
+    build:
+      context: build/
+    container_name: anurag_1
+    volumes:
+      - ./scripts:/usr/local/scripts
+    environment:
+     - DEMO_VAR=${DEMO_VAR}
+     - EXP_NAME=anurag_test_1
+     - EXP_NUM=1
+     - CONSUMER_BOOTSTRAP_SERVER=${CONSUMER_BOOTSTRAP_SERVER}
+     - PRODUCER_BOOTSTRAP_SERVER=${PRODUCER_BOOTSTRAP_SERVER}
+     - CONSUMER_CLIENT_ID=kafka_consumer_anurag_test_1
+     - PRODUCER_CLIENT_ID=kafka_producer_anurag_test_1
+     - AUTO_COMMIT_INTERVAL_MS=${AUTO_COMMIT_INTERVAL_MS}
+     - CONSUMER_GROUP_ID=pipeline_0_group
+     - CONSUMER_TOPIC_NAME=pipeline_0
+     - PRODUCER_TOPIC_NAME=pipeline_1
+    network_mode: host
+
+
+  test_2:
+    build:
+      context: build/
+    container_name: anurag_2
+    volumes:
+      - ./scripts:/usr/local/scripts
+    environment:
+     - DEMO_VAR=${DEMO_VAR}
+     - EXP_NAME=anurag_test_2
+     - EXP_NUM=2
+     - CONSUMER_BOOTSTRAP_SERVER=${CONSUMER_BOOTSTRAP_SERVER}
+     - PRODUCER_BOOTSTRAP_SERVER=${PRODUCER_BOOTSTRAP_SERVER}
+     - CONSUMER_CLIENT_ID=kafka_consumer_anurag_test_2
+     - PRODUCER_CLIENT_ID=kafka_producer_anurag_test_2
+     - AUTO_COMMIT_INTERVAL_MS=${AUTO_COMMIT_INTERVAL_MS}
+     - CONSUMER_GROUP_ID=pipeline_1_group
+     - CONSUMER_TOPIC_NAME=pipeline_1
+     - PRODUCER_TOPIC_NAME=pipeline_2
+    network_mode: host
