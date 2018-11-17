@@ -104,14 +104,16 @@
   * Refer ML/Jupiterlab for installation details
   * Refer nginx/sites-available/default for proxy details
 * __Jupiter Hub__: This is helpful for creating model pipeline and collaborative work
-  * conda activate py35: This activates python 3.5 environment necessary for clipper.ai to work properly.
-  * conda deactivate
-  * jupyter lab: [password: jupiterlab]
+  * Start tmux shell: Tmux allows to run jupyter in background. detach and attach to running tmux shell using, tmux attach and tmux detach
+    * tmux
+      * conda activate py35: This activates python 3.5 environment necessary for clipper.ai to work properly.
+      * conda deactivate
+      * jupyter lab: [password: jupiterlab]
 
 ## Some other commands
 
 * scp -r "/Users/sparta/Desktop/ids_system" sdn-nfv@130.65.157.239:/home/sdn-nfv/Desktop/
-* scp -r sdn-nfv@130.65.157.239:/home/sdn-nfv/Desktop/clipper_test.ipynb "/Users/sparta/Desktop/ids_system/Clipper/notebooks/" 
+* scp -r sdn-nfv@130.65.157.239:/home/sdn-nfv/Desktop/clipper_test.ipynb "/Users/sparta/Desktop/ids_system/Clipper/notebooks/"
 * docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
 * sudo rm -rf kafka-1/data/* & sudo rm -rf kafka-2/data/* & sudo rm -rf kafka-3/data/*
 * sudo rm -rf zookeeper-1/data/* & sudo rm -rf zookeeper-1/log/* & sudo rm -rf zookeeper-2/data/* & sudo rm -rf zookeeper-2/log/* & sudo rm -rf zookeeper-3/data/* & sudo rm -rf zookeeper-3/log/*
