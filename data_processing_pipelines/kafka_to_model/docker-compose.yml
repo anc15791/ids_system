@@ -1,8 +1,7 @@
 version: "2"
 services:
   kafka_to_model:
-    build:
-      context: build/
+    image: anurag1591/kafka_pipeline
     container_name: kafka_to_model
     volumes:
       - ./scripts:/usr/local/scripts

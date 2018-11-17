@@ -1,8 +1,7 @@
 version: "2"
 services:
   test_0:
-    build:
-      context: build/
+    image: anurag1591/kafka_pipeline
     container_name: example_1_anurag_0
     volumes:
       - ./scripts:/usr/local/scripts
@@ -23,8 +22,7 @@ services:
 
 
   test_1:
-    build:
-      context: build/
+    image: anurag1591/kafka_pipeline
     container_name: example_1_anurag_1
     volumes:
       - ./scripts:/usr/local/scripts
@@ -45,8 +43,7 @@ services:
 
 
   test_2:
-    build:
-      context: build/
+    image: anurag1591/kafka_pipeline
     container_name: example_1_anurag_2
     volumes:
       - ./scripts:/usr/local/scripts

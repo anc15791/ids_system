@@ -117,9 +117,8 @@ producer = KafkaProducer(
 # In[ ]:
 
 def convert_to_number(s):
-
     if isinstance(s, str):
-        return int(hashlib.md5(s.encode('utf-8')).hexdigest(), 16)
+        return float(int(hashlib.md5(s.encode('utf-8')).hexdigest(),16))
     else:
         return s
 
@@ -153,7 +152,10 @@ try:
         for key in value.keys():
             if key in FEATURES:
                 output[key] = convert_to_number(value[key])
-        producer.send(PRODUCER_TOPIC_NAME,output)
+        del value['message']
+        value["ml_data"] = output
+        if(len(output) == 12):
+            producer.send(PRODUCER_TOPIC_NAME,value)
         i+=1
         if MESSAGES_TO_READ >= 0 and i > MESSAGES_TO_READ:
             consumer.close()

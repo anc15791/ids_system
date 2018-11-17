@@ -32,7 +32,7 @@ RUN CONDA_VERSION="4.5.4" && \
     chmod -R 0777 "$SRC_DIR" && \
     echo "conda activate" >> /etc/profile.d/conda.sh && \
     source /etc/profile && \
-    pip install kafka-python
+    pip install kafka-python numpy
 
 ENV PATH="$SRC_DIR:${PATH}"
 COPY docker-entrypoint.sh /

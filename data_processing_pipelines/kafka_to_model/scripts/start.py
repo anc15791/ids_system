@@ -77,12 +77,12 @@ else:
 
 
 if "MODEL_SERVER" in os.environ:
-    MODEL_SERVER = int(os.environ["MODEL_SERVER"])
+    MODEL_SERVER = os.environ["MODEL_SERVER"]
 else:
     MODEL_SERVER = None
 
 if "FEATURE_SET" in os.environ:
-    FEATURE_SET = int(os.environ["FEATURE_SET"])
+    FEATURE_SET = os.environ["FEATURE_SET"]
 else:
     FEATURE_SET = None
 
@@ -142,14 +142,15 @@ if PRODUCER_TOPIC_NAME is not "None":
 def convert_to_number(s):
 
     if isinstance(s, str):
-        return float(hashlib.md5(s.encode('utf-8')).hexdigest(), 16)
+        return float(int(hashlib.md5(s.encode('utf-8')).hexdigest(),16))
     else:
         return s
 
 def get_list(dict):
     lst =[]
-    for feature in FEATURES:
-        lst.append(dict[feature])
+    for key in dict:
+        val = dict[key]
+        lst.append(float(val))
     return lst
 
 
@@ -178,12 +179,16 @@ try:
         print("partition: ", partition)
         print("offset: ",offset)
 
-        input = get_list(value)
-
+        data_list = get_list(value["ml_data"])
+        data = np.array(data_list,float).tolist()
+        print("data_list",data_list)
+        print("request model running on : ",MODEL_SERVER)
+        if(len(data) != 12):
+            continue
         res = requests.post(MODEL_SERVER,
               headers=headers,
-              data=json.dumps({"input": input})).json()
-        value["ml_result"] = res
+              data=json.dumps({"input": data})).json()
+        value["ml_result"] = res["output"]
         print("res: ",res)
         producer.send(PRODUCER_TOPIC_NAME,value)
         i+=1
