@@ -301,3 +301,7 @@ $ docker stack services elk
 
 **NOTE:** to scale Elasticsearch in Swarm mode, configure *zen* to use the DNS name `tasks.elasticsearch` instead of
 `elasticsearch`.
+
+
+* Set vm.max_map_count=262144 in /etc/sysctl.conf
+* sysctl -p to update configuration
