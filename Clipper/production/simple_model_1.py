@@ -6,6 +6,7 @@
 
 import logging, xgboost as xgb, numpy as np
 from clipper_admin import ClipperConnection, DockerContainerManager
+from clipper_admin.exceptions import ClipperException
 import pickle
 from numpy import array
 import numpy as np
@@ -37,11 +38,14 @@ except:
 
 
 # We will register it to deploy a simple model.
-clipper_conn.register_application(name='simple_model',
-                                  input_type='floats',
-                                  default_output="-1.0",
-                                  slo_micros=100000)
 
+try:
+    clipper_conn.register_application(name='simple_model',
+                                      input_type='floats',
+                                      default_output="-1.0",
+                                      slo_micros=100000)
+except ClipperException as e:
+    print(str(e))
 
 # In[29]:
 
@@ -56,7 +60,10 @@ with open('../models/model.pickle', 'rb') as handle:
 
 def predict(xs):
     print("xs: ",xs)
-    res = model.predict(xs)
+    res= []
+    for x in xs:
+        x = x.reshape(1, -1)
+        res.append(str(model.predict(x)))
     print("res: ", res)
     return res
 
@@ -71,7 +78,7 @@ from clipper_admin.deployers import python as python_deployer
 # pkgs_to_install = ['xgboost', 'psycopg2']
 python_deployer.deploy_python_closure(clipper_conn,
                                       name='simple-model',
-                                      version=3,
+                                      version=1,
                                       input_type="floats",
                                       pkgs_to_install=['sklearn'],
                                       func=predict)
@@ -83,3 +90,6 @@ try:
     clipper_conn.link_model_to_app('simple_model', 'simple-model')
 except ClipperException as e:
     print(e)
+
+addr = clipper_conn.get_query_addr()
+print(addr)
