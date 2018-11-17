@@ -1,0 +1,102 @@
+[
+  {
+    "_id": "0e7f5a80-de74-11e8-9706-f1df48f32d88",
+    "_type": "dashboard",
+    "_source": {
+      "title": "bro_conn",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":12,\"h\":12,\"i\":\"1\"},\"id\":\"d726e000-de71-11e8-9706-f1df48f32d88\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":12,\"y\":0,\"w\":12,\"h\":12,\"i\":\"2\"},\"id\":\"fde6c430-de71-11e8-9706-f1df48f32d88\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":0,\"w\":12,\"h\":12,\"i\":\"3\"},\"id\":\"24fdc910-de72-11e8-9706-f1df48f32d88\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":36,\"y\":0,\"w\":12,\"h\":12,\"i\":\"4\"},\"id\":\"3c9a3fe0-de72-11e8-9706-f1df48f32d88\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":12,\"w\":24,\"h\":15,\"i\":\"5\"},\"id\":\"7f369910-de73-11e8-9706-f1df48f32d88\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":12,\"w\":24,\"h\":15,\"i\":\"6\"},\"id\":\"e7a47440-de73-11e8-9706-f1df48f32d88\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":39,\"w\":48,\"h\":15,\"i\":\"7\"},\"id\":\"333db770-de76-11e8-9706-f1df48f32d88\",\"panelIndex\":\"7\",\"type\":\"search\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":27,\"w\":12,\"h\":12,\"i\":\"8\"},\"id\":\"673da300-de76-11e8-9706-f1df48f32d88\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"gridData\":{\"x\":12,\"y\":27,\"w\":12,\"h\":12,\"i\":\"9\"},\"version\":\"6.4.2\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"id\":\"3c428950-de7a-11e8-89c6-3b16db71e628\",\"embeddableConfig\":{}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "CPU-slash-Memory-per-container",
+    "_type": "dashboard",
+    "_source": {
+      "description": "Overview of container metrics",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"query\": {\"query\": {\"query_string\": {\"analyze_wildcard\": true, \"query\": \"*\"}}, \"language\": \"lucene\"}, \"version\": true, \"highlightAll\": true}"
+      },
+      "optionsJSON": "{\"darkTheme\": false}",
+      "panelsJSON": "[{\"type\": \"visualization\", \"id\": \"Container-CPU-usage\", \"size_x\": 12, \"size_y\": 3, \"panelIndex\": 2, \"col\": 1, \"row\": 2}, {\"type\": \"visualization\", \"id\": \"System-Navigation\", \"size_x\": 12, \"size_y\": 1, \"panelIndex\": 3, \"col\": 1, \"row\": 1}, {\"type\": \"visualization\", \"id\": \"Container-Memory-stats\", \"size_x\": 12, \"size_y\": 3, \"panelIndex\": 4, \"col\": 1, \"row\": 5}, {\"type\": \"visualization\", \"id\": \"Container-Block-IO\", \"size_x\": 12, \"size_y\": 4, \"panelIndex\": 5, \"col\": 1, \"row\": 8}]",
+      "timeRestore": false,
+      "title": "[Metricbeat System] Containers overview",
+      "uiStateJSON": "{\"P-4\": {\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}, \"P-5\": {\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}, \"P-2\": {\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}}",
+      "version": 1
+    }
+  },
+  {
+    "_id": "AV4REOpp5NkDleZmzKkE",
+    "_type": "dashboard",
+    "_source": {
+      "description": "Overview of docker containers",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [{\"query\": {\"query_string\": {\"analyze_wildcard\": true, \"query\": \"*\"}}}], \"version\": true, \"highlightAll\": true}"
+      },
+      "optionsJSON": "{\"darkTheme\": false}",
+      "panelsJSON": "[{\"type\": \"visualization\", \"id\": \"Docker-containers\", \"size_x\": 7, \"size_y\": 5, \"panelIndex\": 1, \"col\": 1, \"row\": 1}, {\"type\": \"visualization\", \"id\": \"Docker-Number-of-Containers\", \"size_x\": 5, \"size_y\": 2, \"panelIndex\": 2, \"col\": 8, \"row\": 1}, {\"type\": \"visualization\", \"id\": \"Docker-containers-per-host\", \"size_x\": 2, \"size_y\": 3, \"panelIndex\": 3, \"col\": 8, \"row\": 3}, {\"type\": \"visualization\", \"id\": \"Docker-images-and-names\", \"size_x\": 3, \"size_y\": 3, \"panelIndex\": 7, \"col\": 10, \"row\": 3}, {\"type\": \"visualization\", \"id\": \"Docker-CPU-usage\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 4, \"col\": 1, \"row\": 6}, {\"type\": \"visualization\", \"id\": \"Docker-memory-usage\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 5, \"col\": 7, \"row\": 6}, {\"type\": \"visualization\", \"id\": \"Docker-Network-IO\", \"size_x\": 12, \"size_y\": 3, \"panelIndex\": 6, \"col\": 1, \"row\": 9}]",
+      "timeRestore": false,
+      "title": "[Metricbeat Docker] Overview",
+      "uiStateJSON": "{\"P-5\": {\"vis\": {\"legendOpen\": true}}, \"P-7\": {\"vis\": {\"legendOpen\": true}}, \"P-1\": {\"vis\": {\"params\": {\"sort\": {\"columnIndex\": 1, \"direction\": \"asc\"}}}}, \"P-2\": {\"vis\": {\"defaultColors\": {\"0 - 100\": \"rgb(0,104,55)\"}}}, \"P-3\": {\"vis\": {\"legendOpen\": true}}}",
+      "version": 1
+    }
+  },
+  {
+    "_id": "79ffd6e0-faa0-11e6-947f-177f697178b8",
+    "_type": "dashboard",
+    "_source": {
+      "description": "Overviw of host metrics",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"query\": {\"query\": \"beat.name:\\\"sdn-nfv\\\"\", \"language\": \"lucene\"}, \"version\": true, \"highlightAll\": true}"
+      },
+      "optionsJSON": "{\"darkTheme\": false}",
+      "panelsJSON": "[{\"type\": \"visualization\", \"id\": \"6b7b9a40-faa1-11e6-86b1-cd7735ff7e23\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 1, \"col\": 1, \"row\": 12}, {\"type\": \"visualization\", \"id\": \"4d546850-1b15-11e7-b09e-037021c4f8df\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 2, \"col\": 7, \"row\": 6}, {\"type\": \"visualization\", \"id\": \"089b85d0-1b16-11e7-b09e-037021c4f8df\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 3, \"col\": 7, \"row\": 12}, {\"type\": \"visualization\", \"id\": \"bfa5e400-1b16-11e7-b09e-037021c4f8df\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 4, \"col\": 1, \"row\": 9}, {\"type\": \"visualization\", \"id\": \"e0f001c0-1b18-11e7-b09e-037021c4f8df\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 5, \"col\": 7, \"row\": 15}, {\"type\": \"visualization\", \"id\": \"2e224660-1b19-11e7-b09e-037021c4f8df\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 6, \"col\": 1, \"row\": 15}, {\"type\": \"visualization\", \"id\": \"ab2d1e90-1b1a-11e7-b09e-037021c4f8df\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 7, \"col\": 1, \"row\": 6}, {\"type\": \"visualization\", \"id\": \"4e4bb1e0-1b1b-11e7-b09e-037021c4f8df\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 8, \"col\": 7, \"row\": 9}, {\"type\": \"visualization\", \"id\": \"26732e20-1b91-11e7-bec4-a5e9ec5cab8b\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 9, \"col\": 5, \"row\": 2}, {\"type\": \"visualization\", \"id\": \"83e12df0-1b91-11e7-bec4-a5e9ec5cab8b\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 10, \"col\": 1, \"row\": 2}, {\"type\": \"visualization\", \"id\": \"d3166e80-1b91-11e7-bec4-a5e9ec5cab8b\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 11, \"col\": 3, \"row\": 2}, {\"type\": \"visualization\", \"id\": \"522ee670-1b92-11e7-bec4-a5e9ec5cab8b\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 12, \"col\": 7, \"row\": 2}, {\"type\": \"visualization\", \"id\": \"1aae9140-1b93-11e7-8ada-3df93aab833e\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 13, \"col\": 9, \"row\": 2}, {\"type\": \"visualization\", \"id\": \"34f97ee0-1b96-11e7-8ada-3df93aab833e\", \"size_x\": 4, \"size_y\": 2, \"panelIndex\": 14, \"col\": 9, \"row\": 4}, {\"type\": \"visualization\", \"id\": \"System-Navigation\", \"size_x\": 6, \"size_y\": 1, \"panelIndex\": 16, \"col\": 1, \"row\": 1}, {\"type\": \"visualization\", \"id\": \"19e123b0-4d5a-11e7-aee5-fdc812cc3bec\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 21, \"col\": 1, \"row\": 4}, {\"type\": \"visualization\", \"id\": \"d2e80340-4d5c-11e7-aa29-87a97a796de6\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 22, \"col\": 3, \"row\": 4}, {\"type\": \"visualization\", \"id\": \"825fdb80-4d1d-11e7-b5f2-2b7c1895bf32\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 23, \"col\": 7, \"row\": 4}, {\"type\": \"visualization\", \"id\": \"96976150-4d5d-11e7-aa29-87a97a796de6\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 25, \"col\": 11, \"row\": 2}, {\"type\": \"visualization\", \"id\": \"99381c80-4d60-11e7-9a4c-ed99bbcaa42b\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 27, \"col\": 1, \"row\": 18}, {\"type\": \"visualization\", \"id\": \"c5e3cf90-4d60-11e7-9a4c-ed99bbcaa42b\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 28, \"col\": 7, \"row\": 18}, {\"type\": \"visualization\", \"id\": \"590a60f0-5d87-11e7-8884-1bb4c3b890e4\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 29, \"col\": 5, \"row\": 4}, {\"type\": \"visualization\", \"id\": \"3d65d450-a9c3-11e7-af20-67db8aecb295\", \"size_x\": 6, \"size_y\": 1, \"panelIndex\": 30, \"col\": 7, \"row\": 1}]",
+      "timeRestore": false,
+      "title": "[Metricbeat System] Host overview",
+      "uiStateJSON": "{\"P-29\": {\"vis\": {\"defaultColors\": {\"0 - 100\": \"rgb(0,104,55)\"}}}}",
+      "version": 1
+    }
+  },
+  {
+    "_id": "Metricbeat-system-overview",
+    "_type": "dashboard",
+    "_source": {
+      "description": "Overview of system metrics",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"query\": {\"query\": {\"query_string\": {\"analyze_wildcard\": true, \"query\": \"*\"}}, \"language\": \"lucene\"}, \"version\": true, \"highlightAll\": true}"
+      },
+      "optionsJSON": "{\"darkTheme\": false}",
+      "panelsJSON": "[{\"type\": \"visualization\", \"id\": \"System-Navigation\", \"size_x\": 12, \"size_y\": 1, \"panelIndex\": 9, \"col\": 1, \"row\": 1}, {\"type\": \"visualization\", \"id\": \"c6f2ffd0-4d17-11e7-a196-69b9a7a020a9\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 11, \"col\": 1, \"row\": 2}, {\"type\": \"visualization\", \"id\": \"fe064790-1b1f-11e7-bec4-a5e9ec5cab8b\", \"size_x\": 6, \"size_y\": 5, \"panelIndex\": 12, \"col\": 7, \"row\": 4}, {\"type\": \"visualization\", \"id\": \"855899e0-1b1c-11e7-b09e-037021c4f8df\", \"size_x\": 6, \"size_y\": 5, \"panelIndex\": 13, \"col\": 1, \"row\": 4}, {\"type\": \"visualization\", \"id\": \"7cdb1330-4d1a-11e7-a196-69b9a7a020a9\", \"size_x\": 12, \"size_y\": 6, \"panelIndex\": 14, \"col\": 1, \"row\": 9}, {\"type\": \"visualization\", \"id\": \"522ee670-1b92-11e7-bec4-a5e9ec5cab8b\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 16, \"col\": 9, \"row\": 2}, {\"type\": \"visualization\", \"id\": \"1aae9140-1b93-11e7-8ada-3df93aab833e\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 17, \"col\": 11, \"row\": 2}, {\"type\": \"visualization\", \"id\": \"825fdb80-4d1d-11e7-b5f2-2b7c1895bf32\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 18, \"col\": 7, \"row\": 2}, {\"type\": \"visualization\", \"id\": \"d3166e80-1b91-11e7-bec4-a5e9ec5cab8b\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 19, \"col\": 5, \"row\": 2}, {\"type\": \"visualization\", \"id\": \"83e12df0-1b91-11e7-bec4-a5e9ec5cab8b\", \"size_x\": 2, \"size_y\": 2, \"panelIndex\": 20, \"col\": 3, \"row\": 2}]",
+      "timeRestore": false,
+      "title": "[Metricbeat System] Overview",
+      "uiStateJSON": "{\"P-16\": {\"vis\": {\"defaultColors\": {\"0 - 100\": \"rgb(0,104,55)\"}}}, \"P-14\": {\"vis\": {\"defaultColors\": {\"45% - 60%\": \"rgb(35,139,69)\", \"30% - 45%\": \"rgb(116,196,118)\", \"15% - 30%\": \"rgb(199,233,192)\", \"0% - 15%\": \"rgb(247,252,245)\"}}}, \"P-12\": {\"vis\": {\"defaultColors\": {\"0 - 100\": \"rgb(0,104,55)\"}}}, \"P-2\": {\"vis\": {\"defaultColors\": {\"0 - 100\": \"rgb(0,104,55)\"}}}, \"P-3\": {\"vis\": {\"defaultColors\": {\"0 - 100\": \"rgb(0,104,55)\"}}}, \"P-11\": {\"vis\": {\"defaultColors\": {\"0 - 100\": \"rgb(0,104,55)\"}}}}",
+      "version": 1
+    }
+  },
+  {
+    "_id": "023d2930-f1a5-11e7-a9ef-93c69af7b129",
+    "_type": "dashboard",
+    "_source": {
+      "description": "Overview dashboard for the Nginx module in Metricbeat",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"query\": {\"query\": \"\", \"language\": \"lucene\"}, \"version\": true, \"highlightAll\": true}"
+      },
+      "optionsJSON": "{\"useMargins\": true, \"darkTheme\": false, \"hidePanelTitles\": false}",
+      "panelsJSON": "[{\"gridData\": {\"i\": \"1\", \"h\": 3, \"y\": 0, \"w\": 6, \"x\": 6}, \"type\": \"visualization\", \"version\": \"6.2.4\", \"panelIndex\": \"1\", \"id\": \"555df8a0-f1a1-11e7-a9ef-93c69af7b129\"}, {\"gridData\": {\"i\": \"2\", \"h\": 3, \"y\": 3, \"w\": 6, \"x\": 6}, \"type\": \"visualization\", \"version\": \"6.2.4\", \"panelIndex\": \"2\", \"id\": \"a1d92240-f1a1-11e7-a9ef-93c69af7b129\"}, {\"gridData\": {\"i\": \"3\", \"h\": 3, \"y\": 3, \"w\": 6, \"x\": 0}, \"type\": \"visualization\", \"version\": \"6.2.4\", \"panelIndex\": \"3\", \"id\": \"d763a570-f1a1-11e7-a9ef-93c69af7b129\"}, {\"gridData\": {\"i\": \"4\", \"h\": 3, \"y\": 0, \"w\": 6, \"x\": 0}, \"type\": \"visualization\", \"version\": \"6.2.4\", \"panelIndex\": \"4\", \"id\": \"47a8e0f0-f1a4-11e7-a9ef-93c69af7b129\"}, {\"gridData\": {\"i\": \"5\", \"h\": 3, \"y\": 6, \"w\": 12, \"x\": 0}, \"type\": \"visualization\", \"version\": \"6.2.4\", \"panelIndex\": \"5\", \"id\": \"dcbffe30-f1a4-11e7-a9ef-93c69af7b129\"}]",
+      "timeRestore": false,
+      "title": "[Metricbeat Nginx] Overview",
+      "version": 1
+    }
+  }
+]

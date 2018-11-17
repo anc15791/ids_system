@@ -1,0 +1,417 @@
+[
+  {
+    "_id": "Redis-Keyspaces",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": []}"
+      },
+      "savedSearchId": "Metricbeat-Redis",
+      "title": "Keyspaces [Metricbeat Redis]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"area\", \"listeners\": {}, \"params\": {\"scale\": \"linear\", \"seriesParams\": [{\"showCircles\": true, \"show\": \"true\", \"type\": \"area\", \"interpolate\": \"linear\", \"mode\": \"stacked\", \"drawLinesBetweenPoints\": true, \"valueAxis\": \"ValueAxis-1\", \"data\": {\"id\": \"1\", \"label\": \"Count\"}}], \"yAxis\": {}, \"smoothLines\": false, \"categoryAxes\": [{\"style\": {}, \"scale\": {\"type\": \"linear\"}, \"show\": true, \"title\": {}, \"labels\": {\"truncate\": 100, \"show\": true}, \"position\": \"bottom\", \"type\": \"category\", \"id\": \"CategoryAxis-1\"}], \"legendPosition\": \"right\", \"addTimeMarker\": false, \"interpolate\": \"linear\", \"addLegend\": true, \"shareYAxis\": true, \"grid\": {\"style\": {\"color\": \"#eee\"}, \"categoryLines\": false}, \"mode\": \"stacked\", \"defaultYExtents\": false, \"setYExtents\": false, \"addTooltip\": true, \"valueAxes\": [{\"style\": {}, \"scale\": {\"type\": \"linear\", \"mode\": \"normal\"}, \"name\": \"LeftAxis-1\", \"show\": true, \"title\": {\"text\": \"Count\"}, \"labels\": {\"filter\": false, \"rotate\": 0, \"truncate\": 100, \"show\": true}, \"position\": \"left\", \"type\": \"value\", \"id\": \"ValueAxis-1\"}], \"times\": []}, \"aggs\": [{\"params\": {\"field\": \"redis.keyspace.keys\", \"customLabel\": \"Number of keys\"}, \"type\": \"avg\", \"enabled\": true, \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"customInterval\": \"2h\", \"field\": \"@timestamp\", \"interval\": \"auto\", \"min_doc_count\": 1, \"extended_bounds\": {}}, \"type\": \"date_histogram\", \"enabled\": true, \"id\": \"2\", \"schema\": \"segment\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"redis.keyspace.id\", \"customLabel\": \"Keyspaces\", \"order\": \"desc\", \"size\": 5}, \"type\": \"terms\", \"enabled\": true, \"id\": \"3\", \"schema\": \"group\"}], \"title\": \"Keyspaces [Metricbeat Redis]\"}"
+    }
+  },
+  {
+    "_id": "RabbitMQ-Memory-Usage",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": []}"
+      },
+      "savedSearchId": "Metricbeat-Rabbitmq",
+      "title": "Memory Usage [Metricbeat RabbitMQ]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"line\", \"listeners\": {}, \"params\": {\"scale\": \"linear\", \"showCircles\": false, \"yAxis\": {}, \"smoothLines\": true, \"legendPosition\": \"top\", \"addTimeMarker\": false, \"interpolate\": \"linear\", \"addLegend\": true, \"shareYAxis\": true, \"radiusRatio\": 9, \"drawLinesBetweenPoints\": true, \"defaultYExtents\": true, \"setYExtents\": false, \"addTooltip\": true, \"times\": []}, \"aggs\": [{\"params\": {\"field\": \"rabbitmq.node.mem.used.bytes\", \"customLabel\": \"Used memory\", \"json\": \"\"}, \"type\": \"max\", \"enabled\": true, \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"customInterval\": \"30s\", \"field\": \"@timestamp\", \"interval\": \"custom\", \"min_doc_count\": 1, \"extended_bounds\": {}}, \"type\": \"date_histogram\", \"enabled\": true, \"id\": \"3\", \"schema\": \"segment\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"rabbitmq.node.name\", \"customLabel\": \"Node name\", \"order\": \"desc\", \"size\": 5}, \"type\": \"terms\", \"enabled\": true, \"id\": \"4\", \"schema\": \"group\"}], \"title\": \"RabbitMQ Memory Usage\"}"
+    }
+  },
+  {
+    "_id": "Rabbitmq-Number-of-Nodes",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": []}"
+      },
+      "savedSearchId": "Metricbeat-Rabbitmq",
+      "title": "Number of Nodes [Metricbeat RabbitMQ]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metric\", \"listeners\": {}, \"params\": {\"handleNoResults\": true, \"fontSize\": 60}, \"aggs\": [{\"params\": {\"field\": \"rabbitmq.node.name\", \"customLabel\": \"RabbitMQ Nodes\"}, \"type\": \"cardinality\", \"enabled\": true, \"id\": \"1\", \"schema\": \"metric\"}], \"title\": \"Rabbitmq-Number-of-Nodes\"}"
+    }
+  },
+  {
+    "_id": "RabbitMQ-Erlang-Process-Usage",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": []}"
+      },
+      "savedSearchId": "Metricbeat-Rabbitmq",
+      "title": "Erlang Process Usage [Metricbeat RabbitMQ]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"line\", \"listeners\": {}, \"params\": {\"scale\": \"linear\", \"showCircles\": false, \"yAxis\": {}, \"smoothLines\": true, \"legendPosition\": \"top\", \"addTimeMarker\": false, \"interpolate\": \"linear\", \"addLegend\": true, \"shareYAxis\": true, \"radiusRatio\": 9, \"drawLinesBetweenPoints\": true, \"defaultYExtents\": false, \"setYExtents\": false, \"addTooltip\": true, \"times\": []}, \"aggs\": [{\"params\": {\"field\": \"rabbitmq.node.proc.used\", \"customLabel\": \"Used Process\"}, \"type\": \"max\", \"enabled\": true, \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"customInterval\": \"30s\", \"field\": \"@timestamp\", \"interval\": \"custom\", \"min_doc_count\": 1, \"extended_bounds\": {}}, \"type\": \"date_histogram\", \"enabled\": true, \"id\": \"3\", \"schema\": \"segment\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"rabbitmq.node.name\", \"customLabel\": \"Node name\", \"order\": \"desc\", \"size\": 5}, \"type\": \"terms\", \"enabled\": true, \"id\": \"4\", \"schema\": \"group\"}], \"title\": \"RabbitMQ Erlang Process Usage\"}"
+    }
+  },
+  {
+    "_id": "RabbitMQ-Queue-Index-Operations",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": []}"
+      },
+      "savedSearchId": "Metricbeat-Rabbitmq",
+      "title": "Queue Index Operations [Metricbeat RabbitMQ]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"line\", \"params\": {\"scale\": \"linear\", \"seriesParams\": [{\"showCircles\": true, \"show\": \"true\", \"data\": {\"id\": \"1\", \"label\": \"Count\"}, \"mode\": \"normal\", \"drawLinesBetweenPoints\": true, \"valueAxis\": \"ValueAxis-1\", \"type\": \"line\"}], \"yAxis\": {}, \"smoothLines\": false, \"times\": [], \"categoryAxes\": [{\"style\": {}, \"scale\": {\"type\": \"linear\"}, \"show\": true, \"title\": {}, \"labels\": {\"truncate\": 100, \"show\": true}, \"position\": \"bottom\", \"type\": \"category\", \"id\": \"CategoryAxis-1\"}], \"legendPosition\": \"top\", \"addTimeMarker\": false, \"interpolate\": \"linear\", \"addLegend\": true, \"shareYAxis\": true, \"grid\": {\"style\": {\"color\": \"#eee\"}, \"categoryLines\": false}, \"drawLinesBetweenPoints\": true, \"type\": \"line\", \"defaultYExtents\": false, \"radiusRatio\": 9, \"setYExtents\": false, \"addTooltip\": true, \"valueAxes\": [{\"style\": {}, \"scale\": {\"type\": \"linear\", \"mode\": \"normal\"}, \"name\": \"LeftAxis-1\", \"show\": true, \"title\": {\"text\": \"Count\"}, \"labels\": {\"filter\": false, \"rotate\": 0, \"truncate\": 100, \"show\": true}, \"position\": \"left\", \"type\": \"value\", \"id\": \"ValueAxis-1\"}], \"showCircles\": false}, \"aggs\": [{\"params\": {\"field\": \"rabbitmq.node.queue.index.read.count\", \"customLabel\": \"Queue Index Read\"}, \"type\": \"max\", \"enabled\": true, \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"customInterval\": \"30s\", \"field\": \"@timestamp\", \"interval\": \"custom\", \"min_doc_count\": 1, \"extended_bounds\": {}}, \"type\": \"date_histogram\", \"enabled\": true, \"id\": \"2\", \"schema\": \"segment\"}, {\"params\": {\"field\": \"rabbitmq.node.queue.index.journal_write.count\", \"customLabel\": \"Queue Index Jornal Write\"}, \"type\": \"max\", \"enabled\": true, \"id\": \"3\", \"schema\": \"metric\"}, {\"params\": {\"field\": \"rabbitmq.node.queue.index.write.count\", \"customLabel\": \"Queue Index Write\"}, \"type\": \"max\", \"enabled\": true, \"id\": \"4\", \"schema\": \"metric\"}], \"title\": \"Queue Index Operations [Metricbeat RabbitMQ]\"}"
+    }
+  },
+  {
+    "_id": "d7e6bee0-f1f3-11e7-85ab-594b1652e0d1",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Connections rate [Metricbeat MySQL]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"#68BC00\", \"label\": \"Connections rate\", \"metrics\": [{\"field\": \"mysql.status.connections\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}, {\"field\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"type\": \"derivative\", \"id\": \"aee9bbf0-f1f3-11e7-a752-236fe3270d99\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Connections rate [Metricbeat MySQL]\"}"
+    }
+  },
+  {
+    "_id": "695a4f90-f1f4-11e7-85ab-594b1652e0d1",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Command rates [Metricbeat MySQL]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"#68BC00\", \"label\": \"SELECT\", \"metrics\": [{\"field\": \"mysql.status.command.select\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}, {\"field\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"type\": \"derivative\", \"id\": \"2d149f90-f1f4-11e7-a752-236fe3270d99\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": \"0.2\"}, {\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(104,204,202,1)\", \"label\": \"INSERT\", \"metrics\": [{\"field\": \"mysql.status.command.insert\", \"type\": \"avg\", \"id\": \"3c2a2a41-f1f4-11e7-a752-236fe3270d99\"}, {\"field\": \"3c2a2a41-f1f4-11e7-a752-236fe3270d99\", \"type\": \"derivative\", \"id\": \"3c2a2a42-f1f4-11e7-a752-236fe3270d99\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"3c2a2a40-f1f4-11e7-a752-236fe3270d99\", \"fill\": \"0.2\"}, {\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(252,220,0,1)\", \"label\": \"UPDATE\", \"metrics\": [{\"field\": \"mysql.status.command.update\", \"type\": \"avg\", \"id\": \"485ce051-f1f4-11e7-a752-236fe3270d99\"}, {\"field\": \"485ce051-f1f4-11e7-a752-236fe3270d99\", \"type\": \"derivative\", \"id\": \"485ce052-f1f4-11e7-a752-236fe3270d99\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"485ce050-f1f4-11e7-a752-236fe3270d99\", \"fill\": \"0.2\"}, {\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(244,78,59,1)\", \"label\": \"DELETE\", \"metrics\": [{\"field\": \"mysql.status.command.delete\", \"type\": \"avg\", \"id\": \"543a4a71-f1f4-11e7-a752-236fe3270d99\"}, {\"field\": \"543a4a71-f1f4-11e7-a752-236fe3270d99\", \"type\": \"derivative\", \"id\": \"543a4a72-f1f4-11e7-a752-236fe3270d99\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"543a4a70-f1f4-11e7-a752-236fe3270d99\", \"fill\": \"0.2\"}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Command rates [Metricbeat MySQL]\"}"
+    }
+  },
+  {
+    "_id": "124dce60-f1f5-11e7-85ab-594b1652e0d1",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Running threads [Metricbeat MySQL]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(174,161,255,1)\", \"label\": \"Running threads\", \"metrics\": [{\"field\": \"mysql.status.threads.running\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Running threads [Metricbeat MySQL]\"}"
+    }
+  },
+  {
+    "_id": "aaa326b0-f1f5-11e7-85ab-594b1652e0d1",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Opened tables rate [Metricbeat MySQL]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(252,196,0,1)\", \"label\": \"Opened tables rate\", \"metrics\": [{\"field\": \"mysql.status.opened_tables\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}, {\"field\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"type\": \"derivative\", \"id\": \"9972d250-f1f5-11e7-a752-236fe3270d99\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Opened tables rate [Metricbeat MySQL]\"}"
+    }
+  },
+  {
+    "_id": "fb1f3f20-f1f5-11e7-85ab-594b1652e0d1",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Threads created rate [Metricbeat MySQL]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(123,100,255,1)\", \"label\": \"Threads created rate\", \"metrics\": [{\"field\": \"mysql.status.threads.created\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}, {\"field\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"type\": \"derivative\", \"id\": \"9972d250-f1f5-11e7-a752-236fe3270d99\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Threads created rate [Metricbeat MySQL]\"}"
+    }
+  },
+  {
+    "_id": "f5b35930-f1f6-11e7-85ab-594b1652e0d1",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Open files [Metricbeat MySQL]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(22,165,165,1)\", \"label\": \"Open files\", \"metrics\": [{\"field\": \"mysql.status.open.files\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Open files [Metricbeat MySQL]\"}"
+    }
+  },
+  {
+    "_id": "7404feb0-f1f7-11e7-85ab-594b1652e0d1",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Sent and received bytes rates [Metricbeat MySQL]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(0,98,177,1)\", \"label\": \"Received bytes\", \"metrics\": [{\"field\": \"mysql.status.bytes.received\", \"type\": \"avg\", \"id\": \"2b1c2391-f1f7-11e7-a752-236fe3270d99\"}, {\"field\": \"2b1c2391-f1f7-11e7-a752-236fe3270d99\", \"type\": \"derivative\", \"id\": \"2b1c2392-f1f7-11e7-a752-236fe3270d99\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"2b1c2390-f1f7-11e7-a752-236fe3270d99\", \"fill\": 0.5}, {\"line_width\": 1, \"point_size\": 1, \"color\": \"#68BC00\", \"label\": \"Sent bytes\", \"metrics\": [{\"field\": \"mysql.status.bytes.sent\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}, {\"field\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"type\": \"derivative\", \"id\": \"23cfda50-f1f7-11e7-a752-236fe3270d99\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Sent and received bytes rates [Metricbeat MySQL]\"}"
+    }
+  },
+  {
+    "_id": "7cbeb750-5794-11e8-afa2-e9067ea62228",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Kubernetes API Server: Top clients by number of requests",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"bar_color_rules\": [{\"id\": \"61a13010-5794-11e8-8bd0-2180975e72dd\"}], \"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"terms_field\": \"kubernetes.apiserver.request.client\", \"metrics\": [{\"field\": \"kubernetes.apiserver.request.count\", \"type\": \"sum\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}, {\"field\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"type\": \"derivative\", \"id\": \"0e6ff4a0-5792-11e8-8bd0-2180975e72dd\", \"unit\": \"\"}], \"terms_size\": \"10\", \"split_filters\": [{\"color\": \"#68BC00\", \"id\": \"9e4b8030-5792-11e8-8bd0-2180975e72dd\"}], \"color\": \"rgba(104,188,0,1)\", \"stacked\": \"stacked\", \"label\": \"Top clients by number of requests (5m)\", \"filter\": \"\", \"seperate_axis\": 0, \"split_mode\": \"terms\", \"chart_type\": \"line\", \"terms_order_by\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"point_size\": 1, \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"5m\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"index_pattern\": \"metricbeat-*\", \"type\": \"top_n\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Kubernetes API Server: Top clients by number of requests\"}"
+    }
+  },
+  {
+    "_id": "ec360ff0-57a0-11e8-afa2-e9067ea62228",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Kubernetes API Server: Requests",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"metrics\": [{\"field\": \"kubernetes.apiserver.request.latency.sum\", \"type\": \"sum\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}, {\"field\": \"kubernetes.apiserver.request.count\", \"type\": \"sum\", \"id\": \"a2185e50-57a0-11e8-af57-a1d645d2b569\"}, {\"variables\": [{\"field\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"id\": \"b27c8910-57a0-11e8-af57-a1d645d2b569\", \"name\": \"sum\"}, {\"field\": \"a2185e50-57a0-11e8-af57-a1d645d2b569\", \"id\": \"b5fc8810-57a0-11e8-af57-a1d645d2b569\", \"name\": \"count\"}], \"type\": \"calculation\", \"id\": \"b09133d0-57a0-11e8-af57-a1d645d2b569\", \"script\": \"params.sum / params.count\"}], \"color\": \"rgba(159,5,0,1)\", \"stacked\": \"none\", \"value_template\": \"{{value}} ms\", \"label\": \"Avg response time\", \"filter\": \"NOT (kubernetes.apiserver.request.verb: WATCH or kubernetes.apiserver.request.verb: CONNECT)\", \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"point_size\": 1, \"axis_position\": \"right\", \"formatter\": \"us,ms,2\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": \"0\"}, {\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(22,165,165,1)\", \"label\": \"Requests rate\", \"metrics\": [{\"field\": \"kubernetes.apiserver.request.count\", \"type\": \"sum\", \"id\": \"c001ba50-57a1-11e8-a049-ff54cef064a2\"}, {\"field\": \"c001ba50-57a1-11e8-a049-ff54cef064a2\", \"type\": \"derivative\", \"id\": \"dc83b390-57a1-11e8-a049-ff54cef064a2\", \"unit\": \"\"}], \"seperate_axis\": 1, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"c0019340-57a1-11e8-a049-ff54cef064a2\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Kubernetes API Server: Requests\"}"
+    }
+  },
+  {
+    "_id": "95a7f110-57a2-11e8-afa2-e9067ea62228",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Kubernetes API Server: Top clients by resource",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"bar_color_rules\": [{\"id\": \"61a13010-5794-11e8-8bd0-2180975e72dd\"}], \"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"terms_field\": \"kubernetes.apiserver.request.resource\", \"metrics\": [{\"field\": \"kubernetes.apiserver.request.count\", \"type\": \"sum\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}, {\"field\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"type\": \"derivative\", \"id\": \"0e6ff4a0-5792-11e8-8bd0-2180975e72dd\", \"unit\": \"\"}], \"terms_order_by\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"split_filters\": [{\"color\": \"#68BC00\", \"id\": \"9e4b8030-5792-11e8-8bd0-2180975e72dd\"}], \"color\": \"rgba(104,188,0,1)\", \"stacked\": \"stacked\", \"terms_size\": \"10\", \"label\": \"Top clients by number of requests (5m)\", \"filter\": \"\", \"seperate_axis\": 0, \"override_index_pattern\": 0, \"chart_type\": \"line\", \"series_drop_last_bucket\": 1, \"point_size\": 1, \"axis_position\": \"right\", \"formatter\": \"number\", \"split_mode\": \"terms\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"5m\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"index_pattern\": \"metricbeat-*\", \"type\": \"top_n\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Kubernetes API Server: Top clients by resource\"}"
+    }
+  },
+  {
+    "_id": "a5058e70-f0ae-11e7-b9ff-9f96241065de",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Overview [Metricbeat uWSGI]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"timelion\", \"params\": {\"interval\": \"15s\", \"expression\": \".es(metric=avg:uwsgi.status.total.requests).derivative().label('Requests').title('Overview of requests per period'),\\n.es(metric=avg:uwsgi.status.total.exceptions).derivative().label('Exceptions'),\\n.es(metric=max:uwsgi.status.worker.avg_rt).label('Average response time').yaxis(2)\"}, \"title\": \"Overview [Metricbeat uWSGI]\"}"
+    }
+  },
+  {
+    "_id": "ac7194b0-f0ae-11e7-b9ff-9f96241065de",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Memory usage [Metricbeat uWSGI]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"timelion\", \"params\": {\"interval\": \"15s\", \"expression\": \".es(metric=max:uwsgi.status.worker.rss).label('Currently used (rss)').title('Memory usage'),\\n.es(metric=max:uwsgi.status.worker.vsz).label('Assigned (vsz)').yaxis(2)\"}, \"title\": \"Memory usage [Metricbeat uWSGI]\"}"
+    }
+  },
+  {
+    "_id": "8c5f96e0-f0ae-11e7-b9ff-9f96241065de",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Workers [Metricbeat uWSGI]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"timelion\", \"params\": {\"interval\": \"15s\", \"expression\": \".es(split=uwsgi.status.core.id:16,metric=max:uwsgi.status.core.requests.total).derivative().bars().title('Requests handled by each thread (core) per period')\"}, \"title\": \"Workers [Metricbeat uWSGI]\"}"
+    }
+  },
+  {
+    "_id": "ba4a80b0-f0ae-11e7-b9ff-9f96241065de",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Errors [Metricbeat uWSGI]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"timelion\", \"params\": {\"interval\": \"15s\", \"expression\": \".es(metric=max:uwsgi.status.total.read_errors).label('Read errors').title('Errors'),\\n.es(metric=max:uwsgi.status.total.write_errors).label('Write errors'),\\n.es(metric=max:uwsgi.status.worker.harakiri_count).label('Timeouted requests')\"}, \"title\": \"Errors [Metricbeat uWSGI]\"}"
+    }
+  },
+  {
+    "_id": "555df8a0-f1a1-11e7-a9ef-93c69af7b129",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Request Rate [Metricbeat Nginx]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"#68BC00\", \"label\": \"Request rate\", \"metrics\": [{\"field\": \"nginx.stubstatus.requests\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}, {\"field\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"type\": \"derivative\", \"id\": \"396ec980-f1a1-11e7-95d0-8ddf041d42a2\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Request Rate [Metricbeat Nginx]\"}"
+    }
+  },
+  {
+    "_id": "a1d92240-f1a1-11e7-a9ef-93c69af7b129",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Accepts and Handled Rate [Metricbeat Nginx]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"#68BC00\", \"label\": \"Accepts rate\", \"metrics\": [{\"field\": \"nginx.stubstatus.accepts\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}, {\"field\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"type\": \"derivative\", \"id\": \"396ec980-f1a1-11e7-95d0-8ddf041d42a2\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"split_color_mode\": \"gradient\", \"fill\": \"0.5\"}, {\"line_width\": 1, \"point_size\": \"3\", \"color\": \"rgba(0,156,224,1)\", \"label\": \"Handled rate\", \"metrics\": [{\"field\": \"nginx.stubstatus.handled\", \"type\": \"avg\", \"id\": \"56dd33b1-f1a3-11e7-95d0-8ddf041d42a2\"}, {\"field\": \"56dd33b1-f1a3-11e7-95d0-8ddf041d42a2\", \"type\": \"derivative\", \"id\": \"56dd33b2-f1a3-11e7-95d0-8ddf041d42a2\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"56dd33b0-f1a3-11e7-95d0-8ddf041d42a2\", \"fill\": \"0.9\"}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"axis_position\": \"left\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"annotations\": [{\"ignore_panel_filters\": 1, \"color\": \"#F00\", \"ignore_global_filters\": 1, \"time_field\": \"@timestamp\", \"index_pattern\": \"*\", \"id\": \"8644f980-f1a3-11e7-95d0-8ddf041d42a2\", \"icon\": \"fa-tag\"}]}, \"aggs\": [], \"title\": \"Accepts and Handled Rate [Metricbeat Nginx]\"}"
+    }
+  },
+  {
+    "_id": "d763a570-f1a1-11e7-a9ef-93c69af7b129",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Drops Rate [Metricbeat Nginx]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(188,0,65,1)\", \"label\": \"Drops rate\", \"metrics\": [{\"field\": \"nginx.stubstatus.dropped\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}, {\"field\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"type\": \"derivative\", \"id\": \"396ec980-f1a1-11e7-95d0-8ddf041d42a2\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Drops Rate [Metricbeat Nginx]\"}"
+    }
+  },
+  {
+    "_id": "47a8e0f0-f1a4-11e7-a9ef-93c69af7b129",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Active connections [Metricbeat Nginx]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"#68BC00\", \"metrics\": [{\"field\": \"nginx.stubstatus.active\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Active connections [Metricbeat Nginx]\"}"
+    }
+  },
+  {
+    "_id": "dcbffe30-f1a4-11e7-a9ef-93c69af7b129",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Reading / Writing / Waiting Rates [Metricbeat Nginx]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"#68BC00\", \"label\": \"Reading\", \"metrics\": [{\"field\": \"nginx.stubstatus.reading\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}, {\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(0,156,224,1)\", \"label\": \"Writing\", \"metrics\": [{\"field\": \"nginx.stubstatus.writing\", \"type\": \"avg\", \"id\": \"b1773681-f1a4-11e7-95d0-8ddf041d42a2\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"b1773680-f1a4-11e7-95d0-8ddf041d42a2\", \"fill\": 0.5}, {\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(252,220,0,1)\", \"label\": \"Waiting\", \"metrics\": [{\"field\": \"nginx.stubstatus.waiting\", \"type\": \"avg\", \"id\": \"b68aa6c1-f1a4-11e7-95d0-8ddf041d42a2\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"b68aa6c0-f1a4-11e7-95d0-8ddf041d42a2\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Reading / Writing / Waiting Rates [Metricbeat Nginx]\"}"
+    }
+  },
+  {
+    "_id": "eb8277d0-c98c-11e7-9835-2f31fe08873b",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"index\": \"metricbeat-*\", \"query\": {\"query\": \"\", \"language\": \"lucene\"}}"
+      },
+      "title": "Service States [Metricbeat Windows]",
+      "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}",
+      "version": 1,
+      "visState": "{\"type\": \"table\", \"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}, \"perPage\": 10, \"showPartialRows\": false, \"totalFunc\": \"sum\", \"showTotal\": false, \"showMeticsAtAllLevels\": false}, \"aggs\": [{\"params\": {\"sortField\": \"@timestamp\", \"customLabel\": \"Latest Report\", \"field\": \"@timestamp\", \"sortOrder\": \"desc\", \"aggregate\": \"concat\", \"size\": 1}, \"type\": \"top_hits\", \"enabled\": true, \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"orderBy\": \"_term\", \"field\": \"windows.service.display_name\", \"customLabel\": \"Service\", \"order\": \"asc\", \"size\": 100}, \"type\": \"terms\", \"enabled\": true, \"id\": \"2\", \"schema\": \"bucket\"}, {\"params\": {\"orderBy\": \"_term\", \"field\": \"beat.name\", \"customLabel\": \"Host\", \"order\": \"desc\", \"size\": 5}, \"type\": \"terms\", \"enabled\": true, \"id\": \"5\", \"schema\": \"bucket\"}, {\"params\": {\"orderBy\": \"custom\", \"customLabel\": \"State\", \"field\": \"windows.service.state\", \"orderAgg\": {\"params\": {\"field\": \"@timestamp\"}, \"type\": \"max\", \"enabled\": true, \"id\": \"3-orderAgg\", \"schema\": {\"group\": \"none\", \"name\": \"orderAgg\", \"min\": 0, \"aggFilter\": [\"!top_hits\", \"!percentiles\", \"!median\", \"!std_dev\", \"!derivative\", \"!moving_avg\", \"!serial_diff\", \"!cumulative_sum\", \"!avg_bucket\", \"!max_bucket\", \"!min_bucket\", \"!sum_bucket\"], \"max\": null, \"title\": \"Order Agg\", \"hideCustomLabel\": true, \"params\": [], \"editor\": false, \"deprecate\": false}}, \"order\": \"desc\", \"size\": 1}, \"type\": \"terms\", \"enabled\": true, \"id\": \"3\", \"schema\": \"bucket\"}, {\"params\": {\"orderBy\": \"custom\", \"customLabel\": \"Startup Type\", \"field\": \"windows.service.start_type\", \"orderAgg\": {\"params\": {\"field\": \"@timestamp\"}, \"type\": \"max\", \"enabled\": true, \"id\": \"4-orderAgg\", \"schema\": {\"group\": \"none\", \"name\": \"orderAgg\", \"min\": 0, \"aggFilter\": [\"!top_hits\", \"!percentiles\", \"!median\", \"!std_dev\", \"!derivative\", \"!moving_avg\", \"!serial_diff\", \"!cumulative_sum\", \"!avg_bucket\", \"!max_bucket\", \"!min_bucket\", \"!sum_bucket\"], \"max\": null, \"title\": \"Order Agg\", \"hideCustomLabel\": true, \"params\": [], \"editor\": false, \"deprecate\": false}}, \"order\": \"desc\", \"size\": 1}, \"type\": \"terms\", \"enabled\": true, \"id\": \"4\", \"schema\": \"bucket\"}], \"title\": \"Service States [Metricbeat Windows]\"}"
+    }
+  },
+  {
+    "_id": "23a5fff0-c98e-11e7-9835-2f31fe08873b",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"query\": {\"query\": \"\", \"language\": \"lucene\"}}"
+      },
+      "savedSearchId": "b6b7ccc0-c98d-11e7-9835-2f31fe08873b",
+      "title": "Hosts [Metricbeat Windows]",
+      "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}",
+      "version": 1,
+      "visState": "{\"type\": \"table\", \"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}, \"perPage\": 10, \"showPartialRows\": false, \"totalFunc\": \"sum\", \"showTotal\": false, \"showMeticsAtAllLevels\": false}, \"aggs\": [{\"params\": {\"field\": \"windows.service.id\", \"customLabel\": \"Total Services\"}, \"type\": \"cardinality\", \"enabled\": true, \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"beat.name\", \"customLabel\": \"Host\", \"order\": \"desc\", \"size\": 100}, \"type\": \"terms\", \"enabled\": true, \"id\": \"2\", \"schema\": \"bucket\"}], \"title\": \"Hosts [Metricbeat Windows]\"}"
+    }
+  },
+  {
+    "_id": "830c45f0-c991-11e7-9835-2f31fe08873b",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"query\": {\"query\": \"\", \"language\": \"lucene\"}}"
+      },
+      "savedSearchId": "b6b7ccc0-c98d-11e7-9835-2f31fe08873b",
+      "title": "Startup States [Metricbeat Windows]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"pie\", \"params\": {\"legendPosition\": \"right\", \"type\": \"pie\", \"isDonut\": true, \"addTooltip\": true, \"addLegend\": true}, \"aggs\": [{\"params\": {\"field\": \"windows.service.id\", \"customLabel\": \"Service Count\"}, \"type\": \"cardinality\", \"enabled\": true, \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"windows.service.start_type\", \"customLabel\": \"Startup Type\", \"order\": \"desc\", \"size\": 5}, \"type\": \"terms\", \"enabled\": true, \"id\": \"4\", \"schema\": \"segment\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"windows.service.state\", \"customLabel\": \"State\", \"order\": \"desc\", \"size\": 5}, \"type\": \"terms\", \"enabled\": true, \"id\": \"3\", \"schema\": \"segment\"}], \"title\": \"Startup States [Metricbeat Windows]\"}"
+    }
+  },
+  {
+    "_id": "35f5ad60-c996-11e7-9835-2f31fe08873b",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"query\": {\"query\": \"\", \"language\": \"lucene\"}}"
+      },
+      "savedSearchId": "b6b7ccc0-c98d-11e7-9835-2f31fe08873b",
+      "title": "Unique Services [Metricbeat Windows]",
+      "uiStateJSON": "{\"vis\": {\"defaultColors\": {\"0 - 100\": \"rgb(0,104,55)\"}}}",
+      "version": 1,
+      "visState": "{\"type\": \"metric\", \"params\": {\"gauge\": {\"useRange\": false, \"gaugeType\": \"Metric\", \"style\": {\"subText\": \"\", \"bgColor\": false, \"fontSize\": 60, \"labelColor\": false}, \"colorSchema\": \"Green to Red\", \"invertColors\": false, \"orientation\": \"vertical\", \"gaugeStyle\": \"Full\", \"autoExtend\": false, \"labels\": {\"color\": \"black\", \"show\": false}, \"backStyle\": \"Full\", \"colorsRange\": [{\"to\": 100, \"from\": 0}], \"scale\": {\"color\": \"#333\", \"width\": 2, \"labels\": false, \"show\": false}, \"verticalSplit\": false, \"percentageMode\": false, \"type\": \"simple\", \"gaugeColorMode\": \"None\"}, \"type\": \"gauge\", \"addTooltip\": true, \"addLegend\": false}, \"aggs\": [{\"params\": {\"field\": \"windows.service.id\", \"customLabel\": \"Services\"}, \"type\": \"cardinality\", \"enabled\": true, \"id\": \"1\", \"schema\": \"metric\"}], \"title\": \"Unique Services [Metricbeat Windows]\"}"
+    }
+  },
+  {
+    "_id": "c36b2ba0-ca29-11e7-9835-2f31fe08873b",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [{\"meta\": {\"index\": \"metricbeat-*\", \"value\": \"exists\", \"disabled\": false, \"alias\": null, \"key\": \"windows.service.exit_code\", \"negate\": false, \"type\": \"exists\"}, \"$state\": {\"store\": \"appState\"}, \"exists\": {\"field\": \"windows.service.exit_code\"}}, {\"query\": {\"match\": {\"windows.service.exit_code\": {\"query\": \"0\", \"type\": \"phrase\"}}}, \"meta\": {\"index\": \"metricbeat-*\", \"value\": \"0\", \"disabled\": false, \"alias\": null, \"params\": {\"query\": \"0\", \"type\": \"phrase\"}, \"key\": \"windows.service.exit_code\", \"negate\": true, \"type\": \"phrase\"}, \"$state\": {\"store\": \"appState\"}}, {\"query\": {\"match\": {\"windows.service.exit_code\": {\"query\": \"ERROR_SERVICE_NEVER_STARTED\", \"type\": \"phrase\"}}}, \"meta\": {\"index\": \"metricbeat-*\", \"value\": \"ERROR_SERVICE_NEVER_STARTED\", \"disabled\": false, \"alias\": null, \"params\": {\"query\": \"ERROR_SERVICE_NEVER_STARTED\", \"type\": \"phrase\"}, \"key\": \"windows.service.exit_code\", \"negate\": true, \"type\": \"phrase\"}, \"$state\": {\"store\": \"appState\"}}], \"query\": {\"query\": \"\", \"language\": \"lucene\"}}"
+      },
+      "savedSearchId": "b6b7ccc0-c98d-11e7-9835-2f31fe08873b",
+      "title": "Non-zero Service Exit Codes [Metricbeat Windows]",
+      "uiStateJSON": "{\"vis\": {\"defaultColors\": {\"0 - 100\": \"rgb(0,104,55)\"}}}",
+      "version": 1,
+      "visState": "{\"type\": \"metric\", \"params\": {\"gauge\": {\"useRange\": false, \"gaugeType\": \"Metric\", \"style\": {\"subText\": \"\", \"bgColor\": false, \"fontSize\": 60, \"labelColor\": false}, \"colorSchema\": \"Green to Red\", \"invertColors\": false, \"orientation\": \"vertical\", \"gaugeStyle\": \"Full\", \"autoExtend\": false, \"labels\": {\"color\": \"black\", \"show\": false}, \"backStyle\": \"Full\", \"colorsRange\": [{\"to\": 100, \"from\": 0}], \"scale\": {\"color\": \"#333\", \"width\": 2, \"labels\": false, \"show\": false}, \"verticalSplit\": false, \"percentageMode\": false, \"type\": \"simple\", \"gaugeColorMode\": \"None\"}, \"type\": \"gauge\", \"addTooltip\": true, \"addLegend\": false}, \"aggs\": [{\"params\": {\"field\": \"windows.service.id\", \"customLabel\": \"Non-zero Exit Codes\"}, \"type\": \"cardinality\", \"enabled\": true, \"id\": \"1\", \"schema\": \"metric\"}], \"title\": \"Non-zero Service Exit Codes [Metricbeat Windows]\"}"
+    }
+  }
+]

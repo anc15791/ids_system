@@ -1,0 +1,170 @@
+[
+  {
+    "_id": "333db770-de76-11e8-9706-f1df48f32d88",
+    "_type": "search",
+    "_source": {
+      "title": "conn search",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "uid",
+        "connection_state_description",
+        "conn_state",
+        "duration",
+        "history",
+        "proto"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"bro_conn-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Apache-HTTPD",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "_source"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"highlight\": {\"fields\": {\"*\": {}}, \"post_tags\": [\"@/kibana-highlighted-field@\"], \"pre_tags\": [\"@kibana-highlighted-field@\"], \"require_field_match\": false, \"fragment_size\": 2147483647}, \"query\": {\"query_string\": {\"analyze_wildcard\": true, \"query\": \"metricset.module: apache\"}}, \"index\": \"metricbeat-*\"}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Apache HTTPD",
+      "version": 1
+    }
+  },
+  {
+    "_id": "Metricbeat-Docker",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "_source"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"highlight\": {\"fields\": {\"*\": {}}, \"post_tags\": [\"@/kibana-highlighted-field@\"], \"pre_tags\": [\"@kibana-highlighted-field@\"], \"require_field_match\": false, \"fragment_size\": 2147483647}, \"query\": {\"query_string\": {\"analyze_wildcard\": true, \"query\": \"metricset.module:docker\"}}, \"index\": \"metricbeat-*\"}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Metricbeat Docker",
+      "version": 1
+    }
+  },
+  {
+    "_id": "MongoDB-search",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "_source"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"highlight\": {\"fields\": {\"*\": {}}, \"post_tags\": [\"@/kibana-highlighted-field@\"], \"pre_tags\": [\"@kibana-highlighted-field@\"], \"require_field_match\": false, \"fragment_size\": 2147483647}, \"query\": {\"query_string\": {\"analyze_wildcard\": true, \"query\": \"metricset.module:mongodb\"}}, \"index\": \"metricbeat-*\"}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "MongoDB search",
+      "version": 1
+    }
+  },
+  {
+    "_id": "Metricbeat-Redis",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "_source"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"highlight\": {\"fields\": {\"*\": {}}, \"post_tags\": [\"@/kibana-highlighted-field@\"], \"pre_tags\": [\"@kibana-highlighted-field@\"], \"require_field_match\": false, \"fragment_size\": 2147483647}, \"query\": {\"query_string\": {\"analyze_wildcard\": true, \"query\": \"metricset.module:redis\"}}, \"index\": \"metricbeat-*\"}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Metricbeat Redis",
+      "version": 1
+    }
+  },
+  {
+    "_id": "Metricbeat-Rabbitmq",
+    "_type": "search",
+    "_source": {
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"highlight\": {\"fields\": {\"*\": {}}, \"post_tags\": [\"@/kibana-highlighted-field@\"], \"pre_tags\": [\"@kibana-highlighted-field@\"], \"require_field_match\": false, \"fragment_size\": 2147483647}, \"query\": {\"query_string\": {\"analyze_wildcard\": true, \"query\": \"metricset.module:rabbitmq\"}}, \"index\": \"metricbeat-*\"}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Metricbeat-Rabbitmq",
+      "version": 1
+    }
+  },
+  {
+    "_id": "Metricbeat uWSGI status",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "_source"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"index\": \"metricbeat-*\", \"version\": true, \"highlightAll\": true, \"query\": {\"query\": \"metricset.module: uwsgi\", \"language\": \"lucene\"}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Metricbeat uWSGI status",
+      "version": 1
+    }
+  },
+  {
+    "_id": "b6b7ccc0-c98d-11e7-9835-2f31fe08873b",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "beat.name",
+        "windows.service.display_name",
+        "windows.service.state",
+        "windows.service.start_type",
+        "windows.service.uptime.ms",
+        "windows.service.pid",
+        "windows.service.exit_code"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [{\"query\": {\"match\": {\"metricset.module\": {\"query\": \"windows\", \"type\": \"phrase\"}}}, \"meta\": {\"index\": \"metricbeat-*\", \"value\": \"windows\", \"disabled\": false, \"alias\": null, \"params\": {\"query\": \"windows\", \"type\": \"phrase\"}, \"key\": \"metricset.module\", \"negate\": false, \"type\": \"phrase\"}, \"$state\": {\"store\": \"appState\"}}, {\"query\": {\"match\": {\"metricset.name\": {\"query\": \"service\", \"type\": \"phrase\"}}}, \"meta\": {\"index\": \"metricbeat-*\", \"value\": \"service\", \"disabled\": false, \"alias\": null, \"params\": {\"query\": \"service\", \"type\": \"phrase\"}, \"key\": \"metricset.name\", \"negate\": false, \"type\": \"phrase\"}, \"$state\": {\"store\": \"appState\"}}], \"index\": \"metricbeat-*\", \"version\": true, \"highlightAll\": true, \"query\": {\"query\": \"\", \"language\": \"lucene\"}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Services [Metricbeat Windows]",
+      "version": 1
+    }
+  }
+]
