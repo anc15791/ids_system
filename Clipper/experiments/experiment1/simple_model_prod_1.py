@@ -1,18 +1,25 @@
+import sys
+import os
 
-# coding: utf-8
+pathlist = ['/home/sdn-nfv/Desktop/ids_system/Clipper/experiments', '/home/sdn-nfv/anaconda3/envs/py35/lib/python35.zip',
+'/home/sdn-nfv/anaconda3/envs/py35/lib/python3.5', '/home/sdn-nfv/anaconda3/envs/py35/lib/python3.5/plat-linux',
+'/home/sdn-nfv/anaconda3/envs/py35/lib/python3.5/lib-dynload', '/home/sdn-nfv/.local/lib/python3.5/site-packages',
+'/home/sdn-nfv/anaconda3/envs/py35/lib/python3.5/site-packages',"/home/sdn-nfv/Desktop/clipper/clipper_admin/clipper_admin/",
+'/home/sdn-nfv/anaconda3/envs/py35/lib/python3.5/site-packages/ksql-0.5.1-py3.5.egg', "/home/sdn-nfv/Desktop/clipper",
+"/home/sdn-nfv/Desktop/clipper/clipper_admin"]
 
-# In[18]:
+os.environ["PATH"] = os.pathsep.join(pathlist) + os.environ["PATH"]
 
-
-import logging, xgboost as xgb, numpy as np
+import logging
 from clipper_admin import ClipperConnection, DockerContainerManager
 from clipper_admin.exceptions import ClipperException
 import pickle
 from numpy import array
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier
 import requests, json
+
 from sklearn.ensemble import RandomForestClassifier
+
 
 clipper_conn = ClipperConnection(DockerContainerManager())
 
@@ -50,7 +57,7 @@ except ClipperException as e:
 # In[29]:
 
 
-with open('../models/model.pickle', 'rb') as handle:
+with open('model.pickle', 'rb') as handle:
     model = pickle.load(handle)
 
 
