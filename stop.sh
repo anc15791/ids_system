@@ -22,10 +22,16 @@ cd $SRC_DIR/data_processing_pipelines/kafka_to_model/
 docker-compose down -v
 
 cd $SRC_DIR/Clipper/experiments/
-sudo python stop.py
+python stop.py
 
 echo "docker ps"
 docker ps
+
+echo "remove all containers"
+docker rm $(docker ps -aq)
+
+echo "remove images tagged as none. Mostly due to using same name/version of a model"
+docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}')
 
 echo "docker images"
 docker images

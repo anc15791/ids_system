@@ -25,8 +25,8 @@ docker-compose up -d
 sleep 10
 
 cd $SRC_DIR/Clipper/experiments/experiment1/
-sudo python simple_model_train_1.py
-sudo python simple_model_prod_1.py
+#python simple_model_train_1.py
+python simple_model_prod_1.py
 
 cd $SRC_DIR/data_processing_pipelines/kafka_to_model/
 docker-compose up -d
