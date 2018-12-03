@@ -40,6 +40,7 @@
 * Cleanup operations: These commands will remove all images and associated volumes. Do only if loss of data is okay.
   * docker volume rm $(docker volume ls -qf dangling=true)
   * docker system prune -a
+* docker-compose restart worker
 ## How to run
 
 * ssh sdn-nfv@130.65.157.239
