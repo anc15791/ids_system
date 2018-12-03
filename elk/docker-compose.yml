@@ -59,6 +59,8 @@ services:
       - "9600:9600"
       - "5044:5044"
       - "5045:5045"
+    environment:
+      - "LS_OPTS=--config.reload.automatic"
     network_mode: host
     depends_on:
       - elasticsearch
