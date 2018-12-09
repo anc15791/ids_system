@@ -125,6 +125,7 @@
 * service nginx start
 * du -ma /var/lib/docker | sort -n -r | head -n 20
 * kafka version: docker logs kafka_kafka-1_1 | egrep -i "kafka\W+version"
+* sudo netstat -nlp | grep :80
 
 
 ## Some links
