@@ -190,6 +190,9 @@ try:
               data=json.dumps({"input": data})).json()
         value["ml_result"] = res["output"]
         print("res: ",res)
+        del value["ml_data"]
+        del value["timestamp"]
+        del value["duration"]
         producer.send(PRODUCER_TOPIC_NAME,value)
         i+=1
         if MESSAGES_TO_READ >= 0 and i > MESSAGES_TO_READ:
