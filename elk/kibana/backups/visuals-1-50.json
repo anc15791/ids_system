@@ -469,21 +469,6 @@
     }
   },
   {
-    "_id": "Docker-containers",
-    "_type": "visualization",
-    "_source": {
-      "description": "",
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\": []}"
-      },
-      "savedSearchId": "Metricbeat-Docker",
-      "title": "Docker containers [Metricbeat Docker]",
-      "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"columnIndex\": 1, \"direction\": \"asc\"}}}}",
-      "version": 1,
-      "visState": "{\"type\": \"table\", \"listeners\": {}, \"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}, \"perPage\": 8, \"showPartialRows\": false, \"totalFunc\": \"sum\", \"showTotal\": true, \"showMeticsAtAllLevels\": false}, \"aggs\": [{\"params\": {\"orderBy\": \"1\", \"field\": \"docker.container.name\", \"customLabel\": \"Name\", \"order\": \"desc\", \"size\": 5}, \"type\": \"terms\", \"enabled\": true, \"id\": \"2\", \"schema\": \"bucket\"}, {\"params\": {\"field\": \"docker.cpu.total.pct\", \"customLabel\": \"CPU usage (%)\"}, \"type\": \"max\", \"enabled\": true, \"id\": \"3\", \"schema\": \"metric\"}, {\"params\": {\"field\": \"docker.diskio.total\", \"customLabel\": \"DiskIO\"}, \"type\": \"max\", \"enabled\": true, \"id\": \"4\", \"schema\": \"metric\"}, {\"params\": {\"field\": \"docker.memory.usage.pct\", \"customLabel\": \"Mem (%)\"}, \"type\": \"max\", \"enabled\": true, \"id\": \"5\", \"schema\": \"metric\"}, {\"params\": {\"field\": \"docker.memory.rss.total\", \"customLabel\": \"Mem RSS\"}, \"type\": \"max\", \"enabled\": true, \"id\": \"6\", \"schema\": \"metric\"}, {\"params\": {\"field\": \"docker.container.id\", \"customLabel\": \"Number of Containers\"}, \"type\": \"cardinality\", \"enabled\": true, \"id\": \"1\", \"schema\": \"metric\"}], \"title\": \"Docker containers [Metricbeat Docker]\"}"
-    }
-  },
-  {
     "_id": "Docker-Number-of-Containers",
     "_type": "visualization",
     "_source": {
@@ -708,6 +693,20 @@
       "uiStateJSON": "{}",
       "version": 1,
       "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": \"0\", \"color\": \"rgba(211,49,21,1)\", \"label\": \"Used\", \"metrics\": [{\"field\": \"system.memory.actual.used.bytes\", \"type\": \"avg\", \"id\": \"4ff61fd1-1b16-11e7-b09e-037021c4f8df\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"stacked\", \"axis_position\": \"right\", \"formatter\": \"bytes\", \"id\": \"4ff61fd0-1b16-11e7-b09e-037021c4f8df\", \"fill\": \"1\"}, {\"line_width\": 1, \"point_size\": \"0\", \"color\": \"rgba(0,156,224,1)\", \"label\": \"Cache\", \"metrics\": [{\"field\": \"system.memory.actual.used.bytes\", \"type\": \"avg\", \"id\": \"753a6081-1b16-11e7-b09e-037021c4f8df\"}, {\"field\": \"system.memory.used.bytes\", \"type\": \"avg\", \"id\": \"7c9d3f00-1b16-11e7-b09e-037021c4f8df\"}, {\"variables\": [{\"field\": \"753a6081-1b16-11e7-b09e-037021c4f8df\", \"id\": \"890f9620-1b16-11e7-b09e-037021c4f8df\", \"name\": \"actual\"}, {\"field\": \"7c9d3f00-1b16-11e7-b09e-037021c4f8df\", \"id\": \"8f3ab7f0-1b16-11e7-b09e-037021c4f8df\", \"name\": \"used\"}], \"type\": \"calculation\", \"id\": \"869cc160-1b16-11e7-b09e-037021c4f8df\", \"script\": \"params.actual != null && params.used != null ? params.used - params.actual : null\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"stacked\", \"axis_position\": \"right\", \"formatter\": \"bytes\", \"id\": \"753a6080-1b16-11e7-b09e-037021c4f8df\", \"fill\": \"1\"}, {\"line_width\": 1, \"point_size\": \"0\", \"color\": \"#68BC00\", \"label\": \"Free\", \"metrics\": [{\"field\": \"system.memory.free\", \"type\": \"avg\", \"id\": \"32f46f42-1b16-11e7-b09e-037021c4f8df\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"stacked\", \"axis_position\": \"right\", \"formatter\": \"bytes\", \"id\": \"32f46f41-1b16-11e7-b09e-037021c4f8df\", \"fill\": \"1\"}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"32f46f40-1b16-11e7-b09e-037021c4f8df\", \"show_legend\": 1, \"show_grid\": 1, \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Memory Usage [Metricbeat System]\"}"
+    }
+  },
+  {
+    "_id": "e0f001c0-1b18-11e7-b09e-037021c4f8df",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\": [], \"query\": {\"query\": {\"query_string\": {\"query\": \"*\"}}, \"language\": \"lucene\"}}"
+      },
+      "title": "Top Processes By CPU [Metricbeat System]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"bar_color_rules\": [{\"bar_color\": \"rgba(104,188,0,1)\", \"id\": \"60e11be0-1b18-11e7-b09e-037021c4f8df\", \"value\": 0, \"opperator\": \"gte\"}], \"index_pattern\": \"metricbeat-*\", \"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"terms_field\": \"system.process.name\", \"point_size\": 1, \"color\": \"#68BC00\", \"metrics\": [{\"field\": \"system.process.cpu.total.pct\", \"type\": \"avg\", \"id\": \"5f5b8d52-1b18-11e7-b09e-037021c4f8df\"}], \"seperate_axis\": 0, \"split_mode\": \"terms\", \"chart_type\": \"line\", \"terms_order_by\": \"5f5b8d52-1b18-11e7-b09e-037021c4f8df\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"percent\", \"id\": \"5f5b8d51-1b18-11e7-b09e-037021c4f8df\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"filter\": \"\", \"show_legend\": 1, \"drilldown_url\": \"\", \"show_grid\": 1, \"axis_position\": \"left\", \"type\": \"top_n\", \"id\": \"5f5b8d50-1b18-11e7-b09e-037021c4f8df\"}, \"aggs\": [], \"title\": \"Top Processes By CPU [Metricbeat System]\"}"
     }
   }
 ]

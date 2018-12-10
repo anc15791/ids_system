@@ -1,19 +1,5 @@
 [
   {
-    "_id": "cd059410-2bfb-11e7-859b-f78b612cde28",
-    "_type": "visualization",
-    "_source": {
-      "description": "",
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\": [], \"query\": {\"query_string\": {\"query\": \"*\"}}}"
-      },
-      "title": "Kubernetes - Deployments",
-      "uiStateJSON": "{}",
-      "version": 1,
-      "visState": "{\"type\": \"metrics\", \"listeners\": {}, \"params\": {\"bar_color_rules\": [{\"id\": \"68cdba10-30e0-11e7-8df8-6d3604a72912\"}], \"gauge_color_rules\": [{\"id\": \"69765620-30e0-11e7-8df8-6d3604a72912\"}], \"background_color_rules\": [{\"id\": \"67ee7da0-30e0-11e7-8df8-6d3604a72912\"}], \"index_pattern\": \"metricbeat-*\", \"gauge_inner_width\": 10, \"series\": [{\"line_width\": 1, \"terms_field\": \"kubernetes.deployment.name\", \"point_size\": 1, \"color\": \"#68BC00\", \"label\": \"Deployments\", \"metrics\": [{\"field\": \"kubernetes.deployment.name\", \"type\": \"cardinality\", \"id\": \"4c4690b2-30e0-11e7-8df8-6d3604a72912\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"4c4690b1-30e0-11e7-8df8-6d3604a72912\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"filter\": \"metricset.module:kubernetes AND metricset.name:state_deployment\", \"time_field\": \"@timestamp\", \"show_legend\": 1, \"gauge_style\": \"half\", \"axis_position\": \"left\", \"gauge_width\": 10, \"type\": \"metric\", \"id\": \"4c4690b0-30e0-11e7-8df8-6d3604a72912\"}, \"aggs\": [], \"title\": \"Kubernetes - Deployments\"}"
-    }
-  },
-  {
     "_id": "e1018b90-2bfb-11e7-859b-f78b612cde28",
     "_type": "visualization",
     "_source": {
@@ -716,6 +702,20 @@
       "uiStateJSON": "{}",
       "version": 1,
       "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(123,100,255,1)\", \"label\": \"Threads created rate\", \"metrics\": [{\"field\": \"mysql.status.threads.created\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}, {\"field\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"type\": \"derivative\", \"id\": \"9972d250-f1f5-11e7-a752-236fe3270d99\", \"unit\": \"\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Threads created rate [Metricbeat MySQL]\"}"
+    }
+  },
+  {
+    "_id": "f5b35930-f1f6-11e7-85ab-594b1652e0d1",
+    "_type": "visualization",
+    "_source": {
+      "description": "",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      },
+      "title": "Open files [Metricbeat MySQL]",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "visState": "{\"type\": \"metrics\", \"params\": {\"time_field\": \"@timestamp\", \"series\": [{\"line_width\": 1, \"point_size\": 1, \"color\": \"rgba(22,165,165,1)\", \"label\": \"Open files\", \"metrics\": [{\"field\": \"mysql.status.open.files\", \"type\": \"avg\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"seperate_axis\": 0, \"split_mode\": \"everything\", \"chart_type\": \"line\", \"stacked\": \"none\", \"axis_position\": \"right\", \"formatter\": \"number\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": 0.5}], \"axis_formatter\": \"number\", \"interval\": \"auto\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"show_legend\": 1, \"show_grid\": 1, \"legend_position\": \"bottom\", \"index_pattern\": \"metricbeat-*\", \"type\": \"timeseries\", \"axis_position\": \"left\"}, \"aggs\": [], \"title\": \"Open files [Metricbeat MySQL]\"}"
     }
   }
 ]

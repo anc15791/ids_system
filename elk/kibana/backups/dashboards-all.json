@@ -1,21 +1,5 @@
 [
   {
-    "_id": "0e7f5a80-de74-11e8-9706-f1df48f32d88",
-    "_type": "dashboard",
-    "_source": {
-      "title": "bro_conn",
-      "hits": 0,
-      "description": "",
-      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":12,\"h\":12,\"i\":\"1\"},\"id\":\"d726e000-de71-11e8-9706-f1df48f32d88\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":12,\"y\":0,\"w\":12,\"h\":12,\"i\":\"2\"},\"id\":\"fde6c430-de71-11e8-9706-f1df48f32d88\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":0,\"w\":12,\"h\":12,\"i\":\"3\"},\"id\":\"24fdc910-de72-11e8-9706-f1df48f32d88\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":36,\"y\":0,\"w\":12,\"h\":12,\"i\":\"4\"},\"id\":\"3c9a3fe0-de72-11e8-9706-f1df48f32d88\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":12,\"w\":24,\"h\":15,\"i\":\"5\"},\"id\":\"7f369910-de73-11e8-9706-f1df48f32d88\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":12,\"w\":24,\"h\":15,\"i\":\"6\"},\"id\":\"e7a47440-de73-11e8-9706-f1df48f32d88\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":39,\"w\":48,\"h\":15,\"i\":\"7\"},\"id\":\"333db770-de76-11e8-9706-f1df48f32d88\",\"panelIndex\":\"7\",\"type\":\"search\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":27,\"w\":12,\"h\":12,\"i\":\"8\"},\"id\":\"673da300-de76-11e8-9706-f1df48f32d88\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"gridData\":{\"x\":12,\"y\":27,\"w\":12,\"h\":12,\"i\":\"9\"},\"version\":\"6.4.2\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"id\":\"3c428950-de7a-11e8-89c6-3b16db71e628\",\"embeddableConfig\":{}}]",
-      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
-      "version": 1,
-      "timeRestore": false,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
-      }
-    }
-  },
-  {
     "_id": "CPU-slash-Memory-per-container",
     "_type": "dashboard",
     "_source": {
@@ -29,23 +13,6 @@
       "timeRestore": false,
       "title": "[Metricbeat System] Containers overview",
       "uiStateJSON": "{\"P-4\": {\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}, \"P-5\": {\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}, \"P-2\": {\"vis\": {\"params\": {\"sort\": {\"columnIndex\": null, \"direction\": null}}}}}",
-      "version": 1
-    }
-  },
-  {
-    "_id": "AV4REOpp5NkDleZmzKkE",
-    "_type": "dashboard",
-    "_source": {
-      "description": "Overview of docker containers",
-      "hits": 0,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\": [{\"query\": {\"query_string\": {\"analyze_wildcard\": true, \"query\": \"*\"}}}], \"version\": true, \"highlightAll\": true}"
-      },
-      "optionsJSON": "{\"darkTheme\": false}",
-      "panelsJSON": "[{\"type\": \"visualization\", \"id\": \"Docker-containers\", \"size_x\": 7, \"size_y\": 5, \"panelIndex\": 1, \"col\": 1, \"row\": 1}, {\"type\": \"visualization\", \"id\": \"Docker-Number-of-Containers\", \"size_x\": 5, \"size_y\": 2, \"panelIndex\": 2, \"col\": 8, \"row\": 1}, {\"type\": \"visualization\", \"id\": \"Docker-containers-per-host\", \"size_x\": 2, \"size_y\": 3, \"panelIndex\": 3, \"col\": 8, \"row\": 3}, {\"type\": \"visualization\", \"id\": \"Docker-images-and-names\", \"size_x\": 3, \"size_y\": 3, \"panelIndex\": 7, \"col\": 10, \"row\": 3}, {\"type\": \"visualization\", \"id\": \"Docker-CPU-usage\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 4, \"col\": 1, \"row\": 6}, {\"type\": \"visualization\", \"id\": \"Docker-memory-usage\", \"size_x\": 6, \"size_y\": 3, \"panelIndex\": 5, \"col\": 7, \"row\": 6}, {\"type\": \"visualization\", \"id\": \"Docker-Network-IO\", \"size_x\": 12, \"size_y\": 3, \"panelIndex\": 6, \"col\": 1, \"row\": 9}]",
-      "timeRestore": false,
-      "title": "[Metricbeat Docker] Overview",
-      "uiStateJSON": "{\"P-5\": {\"vis\": {\"legendOpen\": true}}, \"P-7\": {\"vis\": {\"legendOpen\": true}}, \"P-1\": {\"vis\": {\"params\": {\"sort\": {\"columnIndex\": 1, \"direction\": \"asc\"}}}}, \"P-2\": {\"vis\": {\"defaultColors\": {\"0 - 100\": \"rgb(0,104,55)\"}}}, \"P-3\": {\"vis\": {\"legendOpen\": true}}}",
       "version": 1
     }
   },
@@ -97,6 +64,38 @@
       "timeRestore": false,
       "title": "[Metricbeat Nginx] Overview",
       "version": 1
+    }
+  },
+  {
+    "_id": "0e7f5a80-de74-11e8-9706-f1df48f32d88",
+    "_type": "dashboard",
+    "_source": {
+      "title": "bro_conn",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"h\":12,\"i\":\"1\",\"w\":12,\"x\":0,\"y\":0},\"id\":\"d726e000-de71-11e8-9706-f1df48f32d88\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":12,\"i\":\"2\",\"w\":12,\"x\":12,\"y\":0},\"id\":\"fde6c430-de71-11e8-9706-f1df48f32d88\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":12,\"i\":\"3\",\"w\":12,\"x\":24,\"y\":0},\"id\":\"24fdc910-de72-11e8-9706-f1df48f32d88\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":12,\"i\":\"4\",\"w\":12,\"x\":36,\"y\":0},\"id\":\"3c9a3fe0-de72-11e8-9706-f1df48f32d88\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":15,\"i\":\"7\",\"w\":48,\"x\":0,\"y\":54},\"id\":\"333db770-de76-11e8-9706-f1df48f32d88\",\"panelIndex\":\"7\",\"type\":\"search\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":12,\"i\":\"8\",\"w\":12,\"x\":0,\"y\":42},\"id\":\"673da300-de76-11e8-9706-f1df48f32d88\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":6,\"i\":\"9\",\"w\":12,\"x\":12,\"y\":48},\"id\":\"3c428950-de7a-11e8-89c6-3b16db71e628\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":12,\"i\":\"10\",\"w\":24,\"x\":24,\"y\":42},\"id\":\"8d6810d0-edd3-11e8-b172-655a1ba2dcb6\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":15,\"i\":\"11\",\"w\":24,\"x\":0,\"y\":12},\"id\":\"9fae0390-f84a-11e8-b0ba-718c3de31cfa\",\"panelIndex\":\"11\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":15,\"i\":\"12\",\"w\":24,\"x\":24,\"y\":12},\"id\":\"fec76970-f84a-11e8-b0ba-718c3de31cfa\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":15,\"i\":\"13\",\"w\":24,\"x\":0,\"y\":27},\"id\":\"ca246ba0-f840-11e8-b0ba-718c3de31cfa\",\"panelIndex\":\"13\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":15,\"i\":\"14\",\"w\":24,\"x\":24,\"y\":27},\"id\":\"bd6c6e10-f842-11e8-b0ba-718c3de31cfa\",\"panelIndex\":\"14\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":6,\"i\":\"15\",\"w\":12,\"x\":12,\"y\":42},\"id\":\"276a69b0-f844-11e8-b0ba-718c3de31cfa\",\"panelIndex\":\"15\",\"type\":\"visualization\",\"version\":\"6.4.2\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "AV4REOpp5NkDleZmzKkE",
+    "_type": "dashboard",
+    "_source": {
+      "title": "[Metricbeat Docker] Overview",
+      "hits": 0,
+      "description": "Overview of docker containers",
+      "panelsJSON": "[{\"embeddableConfig\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":0,\"direction\":\"asc\"}}}},\"gridData\":{\"x\":0,\"y\":0,\"w\":28,\"h\":30,\"i\":\"1\"},\"id\":\"Docker-containers\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"gridData\":{\"x\":28,\"y\":0,\"w\":20,\"h\":10,\"i\":\"2\"},\"id\":\"Docker-Number-of-Containers\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{\"vis\":{\"legendOpen\":true}},\"gridData\":{\"x\":28,\"y\":10,\"w\":8,\"h\":15,\"i\":\"3\"},\"id\":\"Docker-containers-per-host\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"gridData\":{\"x\":0,\"y\":30,\"w\":24,\"h\":15,\"i\":\"4\"},\"id\":\"Docker-CPU-usage\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{\"vis\":{\"legendOpen\":true}},\"gridData\":{\"x\":24,\"y\":30,\"w\":24,\"h\":15,\"i\":\"5\"},\"id\":\"Docker-memory-usage\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"gridData\":{\"x\":0,\"y\":45,\"w\":48,\"h\":15,\"i\":\"6\"},\"id\":\"Docker-Network-IO\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{\"vis\":{\"legendOpen\":true}},\"gridData\":{\"x\":36,\"y\":10,\"w\":12,\"h\":15,\"i\":\"7\"},\"id\":\"Docker-images-and-names\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.4.2\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":false}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"version\":true,\"highlightAll\":true,\"query\":{\"language\":\"lucene\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"default_field\":\"*\",\"query\":\"*\"}}}}"
+      }
     }
   }
 ]
