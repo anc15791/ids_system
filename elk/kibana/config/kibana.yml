@@ -4,4 +4,4 @@
 #
 server.name: kibana
 server.host: "0"
-elasticsearch.url: http://130.65.133.186:9200
+elasticsearch.url: http://130.65.157.239:9200

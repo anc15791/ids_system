@@ -9,8 +9,7 @@ services:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
       - ./elasticsearch/data:/usr/share/elasticsearch/data
     ports:
-      - "9200:9200"
-      - "9300:9300"
+      - "9200-9300:9200-9300"
     environment:
       - cluster.name=docker-cluster
       - discovery.zen.minimum_master_nodes=2
