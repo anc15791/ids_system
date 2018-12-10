@@ -27,11 +27,15 @@ python stop.py
 echo "docker ps"
 docker ps
 
-echo "remove all containers"
+echo "stop and remove all containers"
+docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
 
 echo "remove images tagged as none. Mostly due to using same name/version of a model"
 docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}')
+
+echo "remove dangling containers and images"
+docker volume rm $(docker volume ls -qf dangling=true)
 
 echo "docker images"
 docker images
