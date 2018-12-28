@@ -105,6 +105,7 @@
   docker system prune -a
   ```
 - `docker-compose restart <worker>`
+- Get IP address of docker container `sudo docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_id`
 
 
 ## How to run
